@@ -1,354 +1,952 @@
 /* STYLES FOR ABOVE THE FOLD */
 
 /*-- -------------------------- -->
+<---     Mobile Navigation      -->
+<--- -------------------------- -*/
+
+/* Mobile - 1023px */
+@media only screen and (max-width: 63.9375rem) {
+  body {
+    &.cs-open {
+      overflow: hidden;
+    }
+
+    &.scroll {
+      #cs-navigation {
+        width: 100%;
+        max-width: 100%;
+        top: 0;
+
+        &:before {
+          border-radius: 0;
+        }
+
+        .cs-ul-wrapper {
+          top: 100%;
+        }
+      }
+    }
+  }
+
+  #cs-navigation {
+    width: 94%;
+    max-width: calc(1280 / 16 * 1rem);
+    /* 12px - 24px */
+    padding: clamp(0.75rem, 2vw, 1.5rem);
+    /* prevents padding from affecting height and width */
+    box-sizing: border-box;
+    /* 12px - 24px */
+    border-radius: clamp(0.75rem, 2vw, 1.5rem);
+    position: fixed;
+    top: calc(32 / 16 * 1rem);
+    left: 50%;
+    z-index: 10000;
+    transform: translateX(-50%);
+    transition: top 0.3s, border-radius 0.3s, width 0.3s, max-width 0.3s;
+
+    &:before {
+      /* background color */
+      content: "";
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      /* 12px - 24px */
+      border-radius: clamp(0.75rem, 2vw, 1.5rem);
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      opacity: 1;
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: transform 0.2s, border-radius 0.3s ease-in-out;
+    }
+
+    &.cs-active {
+      &:before {
+        transform: translateX(-50%) scale(1.03);
+      }
+      .cs-toggle {
+        transform: rotate(180deg);
+      }
+
+      .cs-ul-wrapper {
+        transform: scaleY(1);
+        transition-delay: 0.15s;
+      }
+
+      .cs-li {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .cs-container {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: calc(24 / 16 * 1rem);
+    }
+
+    .cs-logo {
+      width: auto;
+      max-width: calc(200 / 16 * 1rem);
+      height: 100%;
+      margin: 0 auto 0 0;
+      padding: 0;
+      /* prevents padding from affecting height and width */
+      box-sizing: border-box;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      z-index: 10;
+
+      img {
+        width: 100%;
+        height: 100%;
+        /* ensures the image never overflows the container. It stays contained within it's width and height and expands to fill it then stops once it reaches an edge */
+        object-fit: contain;
+      }
+    }
+
+    .cs-toggle {
+      width: calc(56 / 16 * 1rem);
+      height: calc(56 / 16 * 1rem);
+      margin: 0 0 0 auto;
+      border-radius: calc(4 / 16 * 1rem);
+      background-color: #1a1a1a;
+      border: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      z-index: 10;
+      transition: transform 0.6s;
+    }
+
+    .cs-nav {
+      /* sends it to the right in the 3rd position */
+      order: 3;
+    }
+
+    .cs-contact-group {
+      display: none;
+      position: relative;
+      z-index: 10;
+    }
+
+    .cs-phone {
+      font-size: calc(16 / 16 * 1rem);
+      line-height: 1.5em;
+      text-decoration: none;
+      margin: 0;
+      color: var(--headerColor);
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: calc(8 / 16 * 1rem);
+      transition: opacity 0.3s, color 0.3s;
+    }
+
+    .cs-phone-icon {
+      width: calc(24 / 16 * 1rem);
+      height: auto;
+      display: block;
+    }
+
+    .cs-social {
+      display: none;
+    }
+
+    .cs-active {
+      .cs-line1 {
+        top: 50%;
+        transform: translate(-50%, -50%) rotate(225deg);
+      }
+
+      .cs-line2 {
+        top: 50%;
+        transform-origin: center;
+        transform: translate(-50%, -50%) translateY(0) rotate(-225deg);
+      }
+
+      .cs-line3 {
+        bottom: 100%;
+        opacity: 0;
+      }
+    }
+
+    .cs-box {
+      /* 24px - 28px */
+      width: clamp(1.5rem, 2vw, 1.75rem);
+      height: calc(16 / 16 * 1rem);
+      position: relative;
+    }
+
+    .cs-line {
+      width: 100%;
+      height: 2px;
+      border-radius: 2px;
+      background-color: #fafbfc;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .cs-line1 {
+      top: 0;
+      transform-origin: center;
+      transition: transform 0.5s, top 0.3s, left 0.3s;
+      animation-duration: 0.7s;
+      animation-timing-function: ease;
+      animation-fill-mode: forwards;
+      animation-direction: normal;
+    }
+
+    .cs-line2 {
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      transition: top 0.3s, left 0.3s, transform 0.5s;
+      animation-duration: 0.7s;
+      animation-timing-function: ease;
+      animation-fill-mode: forwards;
+      animation-direction: normal;
+    }
+
+    .cs-line3 {
+      bottom: 0;
+      transition: bottom 0.3s, opacity 0.3s;
+    }
+
+    .cs-ul-wrapper {
+      width: 100%;
+      height: auto;
+      padding-bottom: calc(48 / 16 * 1rem);
+      opacity: 0;
+      background-color: #fff;
+      border-radius: 0 0 calc(24 / 16 * 1rem) calc(24 / 16 * 1rem);
+      overflow: hidden;
+      position: absolute;
+      top: 85%;
+      left: 0;
+      z-index: -1;
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: transform 0.4s;
+    }
+
+    .cs-ul {
+      margin: 0;
+      padding: calc(64 / 16 * 1rem) 0 0 0;
+      width: 100%;
+      height: auto;
+      max-height: 65vh;
+      overflow: scroll;
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: column;
+      align-items: center;
+      gap: calc(20 / 16 * 1rem);
+    }
+
+    .cs-li {
+      width: 100%;
+      text-align: center;
+      list-style: none;
+      margin-right: 0;
+      /* transition from these values */
+      transform: translateY(-4.375rem);
+      opacity: 0;
+      transition: transform 0.6s, opacity 0.9s;
+
+      &:nth-of-type(1) {
+        transition-delay: 0.05s;
+      }
+      &:nth-of-type(2) {
+        transition-delay: 0.1s;
+      }
+      &:nth-of-type(3) {
+        transition-delay: 0.15s;
+      }
+      &:nth-of-type(4) {
+        transition-delay: 0.2s;
+      }
+      &:nth-of-type(5) {
+        transition-delay: 0.25s;
+      }
+      &:nth-of-type(6) {
+        transition-delay: 0.3s;
+      }
+      &:nth-of-type(7) {
+        transition-delay: 0.35s;
+      }
+      &:nth-of-type(8) {
+        transition-delay: 0.4s;
+      }
+      &:nth-of-type(9) {
+        transition-delay: 0.45s;
+      }
+      &:nth-of-type(10) {
+        transition-delay: 0.5s;
+      }
+      &:nth-of-type(11) {
+        transition-delay: 0.55s;
+      }
+      &:nth-of-type(12) {
+        transition-delay: 0.6s;
+      }
+      &:nth-of-type(13) {
+        transition-delay: 0.65s;
+      }
+    }
+
+    .cs-li-link {
+      /* 16px - 24px */
+      font-size: clamp(1rem, 2.5vw, 1.5rem);
+      line-height: 1.2em;
+      text-decoration: none;
+      margin: 0;
+      color: var(--headerColor);
+      display: inline-block;
+      position: relative;
+
+      &.cs-active {
+        color: var(--primary);
+      }
+
+      &:hover {
+        color: var(--primary);
+      }
+    }
+
+    .cs-button-solid {
+      display: none;
+    }
+  }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #cs-navigation {
+    .cs-contact-group {
+      display: block;
+    }
+  }
+}
+
+/*-- -------------------------- -->
+<---     Desktop Navigation     -->
+<--- -------------------------- -*/
+
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  body.scroll {
+    #cs-navigation {
+      width: 100%;
+      max-width: 100%;
+      border-radius: 0;
+      top: 0;
+    }
+  }
+
+  #cs-navigation {
+    width: 94%;
+    max-width: calc(1440 / 16 * 1rem);
+    height: calc(96 / 16 * 1rem);
+    /* 12px - 24px */
+    padding: clamp(0.75rem, 2vw, 1.5rem) 0;
+    /* prevents padding from affecting height and width */
+    box-sizing: border-box;
+    background-color: #fff;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    /* 12px - 24px */
+    border-radius: clamp(0.75rem, 2vw, 1.5rem);
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: calc(32 / 16 * 1rem);
+    left: 50%;
+    z-index: 10000;
+    transform: translateX(-50%);
+    transition: top 0.3s, border-radius 0.3s, width 0.3s, max-width 0.3s;
+
+    .cs-container {
+      width: 100%;
+      max-width: calc(1440 / 16 * 1rem);
+      margin: auto;
+      padding: 0 calc(24 / 16 * 1rem);
+      /* prevents padding from affecting height and width */
+      box-sizing: border-box;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: calc(24 / 16 * 1rem);
+    }
+
+    .cs-toggle {
+      display: none;
+    }
+
+    .cs-logo {
+      width: 18.4%;
+      max-width: calc(350 / 16 * 1rem);
+      height: calc(32 / 16 * 1rem);
+      /* margin-right auto pushes everything away from it to the right */
+      margin: 0 auto 0 0;
+      padding: 0;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      z-index: 100;
+
+      img {
+        width: auto;
+        height: 100%;
+        /* ensures the image never overflows the container. It stays contained within it's width and height and expands to fill it then stops once it reaches an edge */
+        object-fit: contain;
+      }
+    }
+
+    .cs-contact-group {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: calc(24 / 16 * 1rem);
+    }
+
+    .cs-phone {
+      font-size: calc(16 / 16 * 1rem);
+      line-height: 1.5em;
+      text-decoration: none;
+      margin: 0;
+      color: var(--headerColor);
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: calc(8 / 16 * 1rem);
+      transition: opacity 0.3s, color 0.3s;
+    }
+
+    .cs-phone-icon {
+      width: calc(24 / 16 * 1rem);
+      height: auto;
+      display: block;
+    }
+
+    .cs-social {
+      height: calc(32 / 16 * 1rem);
+      visibility: visible;
+      opacity: 1;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      gap: calc(8 / 16 * 1rem);
+      transition: opacity 0.3s, visibility 0.3s, height 0.3s;
+    }
+
+    .cs-social-link {
+      text-decoration: none;
+      width: calc(32 / 16 * 1rem);
+      height: calc(32 / 16 * 1rem);
+      background-color: #f7f7f7;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: var(--primary);
+
+        .cs-social-icon {
+          filter: grayscale(1) brightness(10000%);
+          opacity: 1;
+        }
+      }
+    }
+
+    .cs-social-icon {
+      width: calc(12 / 16 * 1rem);
+      height: auto;
+      opacity: 0.6;
+      display: block;
+      transition: opacity 0.3s;
+    }
+
+    .cs-ul-wrapper {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      /* absolutely positioned to be dead center */
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .cs-ul {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      /* 20px - 36px */
+      gap: clamp(1.25rem, 2.6vw, 2.25rem);
+    }
+
+    .cs-li {
+      list-style: none;
+      height: 100%;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      /* prevent flexbox from squishing it */
+      flex: none;
+    }
+
+    .cs-li-link {
+      font-size: calc(16 / 16 * 1rem);
+      line-height: 1.5em;
+      text-decoration: none;
+      margin: 0;
+      color: var(--headerColor);
+      display: block;
+      position: relative;
+      transition: color 0.3s;
+
+      &:hover {
+        color: var(--primary);
+      }
+
+      &.cs-active {
+        color: var(--primary);
+      }
+    }
+
+    .cs-button-solid {
+      font-size: calc(16 / 16 * 1rem);
+      /* 46px - 56px */
+      line-height: clamp(2.875em, 5.5vw, 3.5em);
+      text-decoration: none;
+      font-weight: 700;
+      text-align: center;
+      margin: 0;
+      color: #fff;
+      min-width: calc(150 / 16 * 1rem);
+      padding: 0 calc(32 / 16 * 1rem);
+      background-color: var(--primary);
+      display: inline-block;
+      position: relative;
+      z-index: 1;
+      /* prevents padding from adding to the width */
+      box-sizing: border-box;
+      transition: color 0.3s;
+
+      &:before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 0%;
+        background: #fff;
+        opacity: 1;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: width 0.3s;
+      }
+
+      &:hover {
+        color: #1a1a1a;
+        &:before {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+/* Large Desktop - 1300px */
+@media only screen and (min-width: 81.25rem) {
+  #cs-navigation {
+    .cs-social {
+      display: flex;
+    }
+  }
+}
+
+/*-- -------------------------- -->
 <---           Hero             -->
 <--- -------------------------- -*/
 
 /* Mobile - 360px */
-@media only screen and (min-width: 0em) {
-    #hero {
-        font-family: "Roboto", "Arial", sans-serif;
-        /* Centers button */
-        text-align: center;
-        /* changes on tablet */
-        padding: 0 calc(16 / 16 * 1rem);
-        padding-bottom: calc(100 / 16 * 1rem);
-        position: relative;
-        z-index: 1;
-        /* prevents overflow from the lines extending past the screen width */
-        overflow: hidden;
-
-        .cs-picture {
-            /* Background Image */
-            width: 100%;
-            height: 100%;
-            display: block;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: -2;
-
-            &:before {
-                /* Black Color Overlay */
-                content: "";
-                width: 100%;
-                height: 100%;
-                background: #000;
-                opacity: 0.7;
-                display: block;
-                position: absolute;
-                top: 0;
-                left: 0;
-                z-index: 1;
-                /* prevents the cursor from interacting with it */
-                pointer-events: none;
-            }
-
-            img {
-                width: 100%;
-                height: 100%;
-                /* Makes image act like a background-image */
-                object-fit: cover;
-                position: absolute;
-                top: 0;
-                left: 0;
-            }
-        }
-
-        .cs-container {
-            width: 100%;
-            max-width: calc(1280 / 16 * 1em);
-            margin: auto;
-            /* we put the padding top and bottom on the container instead of #Hero so the pseudo element lines go to the top and bottom of the section */
-            /* 144px - 280px - leaving extra space for the navigation */
-            /* changes on tablet */
-            padding: clamp(9em, 25.95vw, 17.5em) 0;
-            position: relative;
-
-            &:before {
-                /* Left Line */
-                content: "";
-                width: 1px;
-                height: 100%;
-                background: -moz-linear-gradient(
-                    top,
-                    rgba(250, 251, 252, 0.5) 0%,
-                    rgba(250, 251, 252, 0) 100%
-                ); /* FF3.6-15 */
-                background: -webkit-linear-gradient(
-                    top,
-                    rgba(250, 251, 252, 0.5) 0%,
-                    rgba(250, 251, 252, 0) 100%
-                ); /* Chrome10-25,Safari5.1-6 */
-                opacity: 1;
-                display: block;
-                position: absolute;
-                top: 0;
-                left: 0;
-            }
-        }
-
-        .cs-flex-group {
-            width: 80vw;
-            /* 464px - 562px */
-            max-width: clamp(29em, 60vw, 35.125em);
-            margin: auto;
-            /* 60px - 220px */
-            margin-bottom: clamp(3.75em, 15.5vw, 13.75em);
-            box-sizing: border-box;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            flex-wrap: wrap;
-        }
-
-        .cs-topper {
-            text-align: center;
-            margin-bottom: calc(16 / 16 * 1rem);
-            color: var(--primary);
-        }
-
-        .cs-title {
-            text-align: center;
-            width: 100%;
-            color: var(--bodyTextColorWhite);
-        }
-
-        .cs-text {
-            text-align: center;
-            /* 32px - 40px */
-            margin: 0 auto clamp(2rem, 4vw, 2.5rem) 0;
-            /* 40px - 48px */
-            margin-bottom: clamp(2.5rem, 4vw, 3rem);
-            color: var(--bodyTextColorWhite);
-        }
-
-        .cs-button-solid {
-            line-height: clamp(2.875em, 5.5vw, 3.5em);
-            height: initial;
-            margin-bottom: calc(16 / 16 * 1rem);
-        }
-
-        .cs-button-transparent {
-            font-size: calc(16 / 16 * 1rem);
-            font-weight: 700;
-            /* 46px - 56px */
-            line-height: clamp(2.875em, 5.5vw, 3.5em);
-            text-decoration: none;
-            width: calc(180 / 16 * 1rem);
-            /* 46px - 56px */
-            height: clamp(2.875em, 5.5vw, 3.5em);
-            margin: 0 calc(8 / 16 * 1rem);
-            box-sizing: border-box;
-            padding: 0;
-            color: #fff;
-            background-color: transparent;
-            border: 1px solid var(--bodyTextColorWhite);
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            z-index: 1;
-
-            &:before {
-                content: "";
-                background: #000;
-                opacity: 1;
-                display: block;
-                position: absolute;
-                /* so it sits on top of the border */
-                top: -1px;
-                right: -1px;
-                bottom: -1px;
-                left: -1px;
-                z-index: -1;
-                /* this is what creates the grow affect on hover */
-                transform: scaleX(0);
-                transition: transform 0.3s;
-                transform-origin: left;
-            }
-
-            &:hover {
-                &:before {
-                    transform: scaleX(1);
-                }
-            }
-
-            .cs-img {
-                margin-right: calc(12 / 16 * 1rem);
-                display: block;
-            }
-        }
+@media only screen and (min-width: 0rem) {
+  @keyframes floatAnimation {
+    0% {
+      transform: translateY(0);
     }
+    50% {
+      transform: translateY(-2rem);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes floatAnimation2 {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-3rem);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  #hero-1349 {
+    /* 250px - 500px - leaving extra space for the navigation */
+    padding: clamp(15.625rem, 35.95vw, 25rem) calc(16 / 16 * 1rem) 0;
+    /* 200px - 250px */
+    padding-bottom: clamp(12.5rem, 16.5vw, 15.625rem);
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+
+    &:before {
+      /* Overlay */
+      content: "";
+      width: 100%;
+      height: 30%;
+      background: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        from(rgba(0, 0, 0, 1)),
+        to(rgba(0, 0, 0, 0))
+      );
+      background: -o-linear-gradient(
+        top,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 0) 100%
+      );
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 0) 100%
+      );
+      opacity: 1;
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      /* prevents the cursor from interacting with it */
+      pointer-events: none;
+    }
+
+    .cs-container {
+      width: 100%;
+      max-width: calc(1280 / 16 * 1rem);
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .cs-content {
+      /* set text align to left if content needs to be left aligned */
+      text-align: center;
+      width: 100%;
+      max-width: calc(630 / 16 * 1rem);
+      display: flex;
+      flex-direction: column;
+      /* centers content horizontally, set to flex-start to left align */
+      align-items: center;
+    }
+
+    .cs-topper {
+      font-size: calc(20 / 16 * 1rem);
+      line-height: 1.2em;
+      text-transform: uppercase;
+      text-align: inherit;
+      letter-spacing: 0.1em;
+      font-weight: 700;
+      color: #e8e8e8;
+      margin-bottom: calc(8 / 16 * 1rem);
+      display: block;
+    }
+
+    .cs-title {
+      /* 39px - 61px */
+      font-size: clamp(2.4375rem, 6.4vw, 3.8125rem);
+      font-weight: 700;
+      line-height: 1.2em;
+      text-align: inherit;
+      max-width: 20ch;
+      margin: 0 0 calc(16 / 16 * 1rem) 0;
+      color: #fff;
+      position: relative;
+    }
+
+    .cs-text {
+      font-size: calc(20 / 16 * 1rem);
+      line-height: 1.5em;
+      text-align: inherit;
+      width: 100%;
+      /* 464px - 622px */
+      max-width: clamp(29rem, 60vw, 38.785rem);
+      margin: 0 0 calc(40 / 16 * 1rem) 0;
+      color: #e8e8e8;
+    }
+
+    .cs-button-solid {
+      font-size: calc(16 / 16 * 1rem);
+      line-height: calc(56 / 16 * 1rem);
+      text-decoration: none;
+      font-weight: 700;
+      overflow: hidden;
+      margin: 0;
+      color: #fff;
+      padding: 0 calc(48 / 16 * 1rem);
+      border-radius: calc(30 / 16 * 1rem);
+      background-color: var(--primary);
+      display: inline-block;
+      position: relative;
+      z-index: 1;
+      transition: color 0.3s;
+
+      &:before {
+        content: "";
+        position: absolute;
+        display: block;
+        height: 100%;
+        width: 0%;
+        background: #fff;
+        opacity: 1;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: width 0.3s;
+      }
+
+      &:hover {
+        color: var(--primary);
+        &:before {
+          width: 100%;
+        }
+      }
+    }
+
+    .cs-bubbles {
+      /* this scales the children inside of it down. They're all in ems so they pull from the parent font size for their value of em, in this case, the value of em is tied to the viewwidth size and stops growing when the font size is equal to 1em, which it pulls from the nearst parent with a declred font size (which is the html tag, and that tag is 16px by default) */
+      font-size: min(2vw, 0.5em);
+      position: absolute;
+      z-index: -1;
+    }
+
+    .cs-bubbles1 {
+      width: calc(680 / 16 * 1em);
+      height: calc(724 / 16 * 1em);
+      right: calc(-190 / 16 * 1rem);
+      /* changes to 172 at large desktop */
+      top: 0;
+
+      &:before {
+        /* white border bubble */
+        content: "";
+        width: calc(622 / 16 * 1em);
+        height: calc(622 / 16 * rem);
+        background: transparent;
+        border: 1px solid #fff;
+        border-radius: 50%;
+        opacity: 1;
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        animation-name: floatAnimation;
+        animation-duration: 7s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite;
+      }
+
+      &:after {
+        /* orange bubble */
+        content: "";
+        width: calc(546 / 16 * 1em);
+        height: calc(546 / 16 * 1em);
+        background: var(--primary);
+        opacity: 0.8;
+        border-radius: 50%;
+        display: block;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+        animation-name: floatAnimation2;
+        animation-duration: 10s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite;
+      }
+    }
+
+    .cs-bubbles2 {
+      width: calc(330 / 16 * 1rem);
+      height: calc(476 / 16 * 1rem);
+      /* changes to 160px at larger desktop */
+      left: calc(-220 / 16 * 1rem);
+      /* removed at larger desktop */
+      bottom: calc(-260 / 16 * 1rem);
+
+      &:before {
+        /* white border bubble */
+        content: "";
+        width: calc(330 / 16 * 1rem);
+        height: calc(330 / 16 * 1rem);
+        background: transparent;
+        border: 1px solid #fff;
+        border-radius: 50%;
+        opacity: 1;
+        position: absolute;
+        display: block;
+        bottom: 0;
+        right: 0;
+        animation-name: floatAnimation;
+        animation-duration: 5s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite;
+      }
+
+      &:after {
+        /* orange bubble */
+        content: "";
+        width: calc(260 / 16 * 1rem);
+        height: calc(260 / 16 * 1rem);
+        background: var(--primary);
+        opacity: 0.8;
+        border-radius: 50%;
+        display: block;
+        position: absolute;
+        top: 0;
+        right: calc(40 / 16 * 1rem);
+        z-index: -1;
+        animation-name: floatAnimation2;
+        animation-duration: 14s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite;
+      }
+    }
+
+    .cs-background {
+      width: 100%;
+      height: 100%;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -2;
+
+      &:before {
+        /* Overlay */
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: #000;
+        opacity: 0.4;
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        /* prevents the cursor from interacting with it */
+        pointer-events: none;
+      }
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        /* makes the top of the image start at the top of the parent */
+        object-position: top;
+      }
+    }
+  }
 }
 
 /* Tablet - 768px */
-@media only screen and (min-width: 48em) {
-    #hero {
-        /* 32px - 40px */
-        padding: 0 clamp(2em, 5vw, 2.5em);
-
-        .cs-container {
-            padding: clamp(7em, 27.95vw, 17.5em) 0 clamp(9em, 30.95vw, 23.5em) 0;
-            &:after {
-                /* Right Line */
-                content: "";
-                width: 1px;
-                height: 100%;
-                background: -moz-linear-gradient(
-                    top,
-                    rgba(250, 251, 252, 0) 0%,
-                    rgba(250, 251, 252, 0.5) 100%
-                ); /* FF3.6-15 */
-                background: -webkit-linear-gradient(
-                    top,
-                    rgba(250, 251, 252, 0) 0%,
-                    rgba(250, 251, 252, 0.5) 100%
-                ); /* Chrome10-25,Safari5.1-6 */
-                opacity: 1;
-                display: block;
-                position: absolute;
-                top: 0;
-                right: 0;
-            }
-        }
-
-        .cs-button-solid {
-            margin-right: calc(20 / 16 * 1rem);
-            margin-bottom: 0;
-        }
+@media only screen and (min-width: 48rem) {
+  #hero-1349 {
+    .cs-container {
+      align-items: flex-start;
     }
+
+    .cs-content {
+      text-align: left;
+      align-items: flex-start;
+    }
+
+    .cs-bubbles {
+      font-size: 1em;
+    }
+
+    .cs-bubbles1 {
+      /* changes to auto at large desktop */
+      right: calc(-428 / 16 * 1rem);
+    }
+  }
 }
 
-/* Desktop Parallax Effect - 1300px */
-@media only screen and (min-width: 81.25em) {
-    #hero {
-        background: url("/assets/images/landing.jpg");
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        /* creates parallax effect on background image */
-        background-attachment: fixed;
+/* Large Desktop - 1300px */
+@media only screen and (min-width: 81.25rem) {
+  #hero-1349 {
+    .cs-bubbles1 {
+      /* 200px - 450px */
+      margin-left: clamp(12.5rem, 20vw, 28.125rem);
+      top: calc(172 / 16 * 1rem);
+      right: auto;
+      left: 50%;
     }
+  }
 }
 
-/* Dark Mode */
-@media only screen and (min-width: 0em) {
-    body.dark-mode {
-        #hero {
-            .cs-background {
-                &:before {
-                    opacity: 0.8;
-                }
-            }
-        }
+/* Large Desktop Parallax Effect - 1600px */
+@media only screen and (min-width: 100rem) {
+  #hero-1349 {
+    .cs-background {
+      background: url("../images/bridge.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      img {
+        display: none;
+      }
     }
+  }
 }
 
-/*-- -------------------------- -->
-<---          Services          -->
-<--- -------------------------- -*/
-
-/* Mobile */
-@media only screen and (min-width: 0em) {
-    .services {
-        width: 90%;
-        max-width: calc(1320 / 16 * 1em);
-        margin: auto;
-        margin-top: calc(-167 / 16 * 1em);
-        margin-bottom: calc(50 / 16 * 1em);
-        padding: calc(50 / 16 * 1em) calc(20 / 16 * 1em);
-        background: #fff;
-        box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.05);
-        border-top: calc(6 / 16 * 1em) solid var(--primary);
-        border-radius: calc(5 / 16 * 1em);
-        position: relative;
-        z-index: 100;
-        .card {
-            width: 100%;
-            max-width: calc(357 / 16 * 1em);
-            margin: auto;
-            margin-bottom: calc(50 / 16 * 1em);
-            display: block;
-            &:last-of-type {
-                margin-bottom: 0;
-            }
-
-            picture {
-                width: calc(88 / 16 * 1em);
-                height: calc(88 / 16 * 1em);
-                margin: auto;
-                margin-bottom: calc(23 / 16 * 1em);
-                background: var(--primary);
-                border-radius: 50%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
-                img {
-                    width: calc(48 / 16 * 1em);
-                    height: calc(48 / 16 * 1em);
-                }
-            }
-            h2 {
-                font-size: calc(32 / 16 * 1em);
-                font-weight: 700;
-                line-height: calc(27 / 20 * 1em);
-                text-align: center;
-                margin-bottom: calc(13 / 20 * 1em);
-                color: #1a1a1a;
-            }
-            p {
-                line-height: calc(24 / 18 * 1em);
-                text-align: center;
-                width: 100%;
-                opacity: 0.7;
-            }
-        }
+/* Larger Desktop - 1800px */
+@media only screen and (min-width: 112.5rem) {
+  #hero-1349 {
+    .cs-bubbles2 {
+      margin-right: calc(800 / 16 * 1rem);
+      right: 50%;
+      left: auto;
+      top: calc(210 / 16 * 1rem);
+      bottom: auto;
     }
-}
-
-/* Inbetween */
-@media only screen and (min-width: 768px) {
-    .services {
-        font-size: min(1.8vw, 1em);
-        width: 98%;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-
-        .card {
-            max-width: calc(325 / 16 * 1em);
-            margin: 0;
-        }
-    }
-}
-
-/* Large Desktop */
-@media only screen and (min-width: 1300px) {
-    .services {
-        padding: calc(50 / 16 * 1em) calc(80 / 16 * 1em);
-
-        .card {
-            max-width: calc(357 / 16 * 1em);
-        }
-    }
-}
-
-/* Dark mode */
-@media only screen and (min-width: 0em) {
-    body.dark-mode {
-        #services {
-            background: var(--medium);
-
-            picture {
-                background: var(--primaryDark);
-            }
-
-            h2 {
-                font-weight: bold;
-                color: #fff;
-            }
-        }
-    }
+  }
 }

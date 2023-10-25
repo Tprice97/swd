@@ -1,0 +1,53 @@
+---
+title: "Blog"
+description: "Meta description for the page"
+preloadImg: "/assets/images/cabinets2.jpg"
+permalink: "services/"
+eleventyNavigation:
+  key: Services
+  order: 500
+---
+
+{% extends "layouts/base.html" %} {% block head %}
+<link rel="stylesheet" href="/assets/css/services.css" />
+{% endblock %} {% block body %}
+<!-- ============================================ -->
+<!--                   Banner                     -->
+<!-- ============================================ -->
+
+<div id="banner-1400">
+  <div class="cs-container">
+    <span class="cs-int-title">About Us</span>
+    <div class="cs-breadcrumbs">
+      <a href="" class="cs-link">Home</a>
+      <a href="" class="cs-link cs-active">About</a>
+    </div>
+  </div>
+  <!--Background Image-->
+  <picture class="cs-background">
+    <!--Mobile Image-->
+    <source
+      media="(max-width: 600px)"
+      srcset="
+        https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/people-laughing.jpg
+      "
+    />
+    <!--Tablet and above Image-->
+    <source
+      media="(min-width: 601px)"
+      srcset="
+        https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/people-laughing.jpg
+      "
+    />
+    <img
+      decoding="async"
+      src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/people-laughing.jpg"
+      alt="people laughing"
+      width="1280"
+      height="568"
+      aria-hidden="true"
+    />
+  </picture>
+</div>
+
+{% endblock %}
