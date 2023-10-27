@@ -689,21 +689,21 @@
 }
 
 /* Dark Mode */
-@media only screen and (min-width: 0em) {
-  body.dark-mode {
-    #reviews {
-      .review {
-        background: var(--medium);
+// @media only screen and (min-width: 0em) {
+//   body.dark-mode {
+//     #reviews {
+//       .review {
+//         background: var(--medium);
 
-        .name {
-          color: #fff;
-        }
+//         .name {
+//           color: #fff;
+//         }
 
-        .desc {
-          color: #fff;
-          opacity: 0.7;
-        }
-      }
-    }
-  }
-}
+//         .desc {
+//           color: #fff;
+//           opacity: 0.7;
+//         }
+//       }
+//     }
+//   }
+// }
