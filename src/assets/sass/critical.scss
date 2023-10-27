@@ -90,25 +90,48 @@
     }
 
     .cs-logo {
-      width: auto;
-      max-width: calc(200 / 16 * 1rem);
-      height: 100%;
-      margin: 0 auto 0 0;
-      padding: 0;
-      /* prevents padding from affecting height and width */
-      box-sizing: border-box;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      z-index: 10;
+      width: 100%;
+      max-width: calc(
+        210 / 16 * 1rem
+      ); // Adjust with the current size of the logo in pixels
+      height: calc(
+        29 / 16 * 1rem
+      ); // Adjust with the current size of the logo in pixels
+    }
 
-      img {
-        width: 100%;
-        height: 100%;
-        /* ensures the image never overflows the container. It stays contained within it's width and height and expands to fill it then stops once it reaches an edge */
-        object-fit: contain;
+    .cs-logo img {
+      width: 100%;
+      height: 100%;
+    }
+
+    @media only screen and (min-width: 63.9375rem) {
+      // 1023px
+      .cs-logo {
+        max-width: calc(360 / 16 * 1rem); // 360px wide on desktop
+        height: calc(50 / 16 * 1rem); // 50px tall on desktop
       }
     }
+
+    // .cs-logo {
+    //   width: auto;
+    //   max-width: calc(200 / 16 * 1rem);
+    //   height: 100%;
+    //   margin: 0 auto 0 0;
+    //   padding: 0;
+    //   /* prevents padding from affecting height and width */
+    //   box-sizing: border-box;
+    //   display: flex;
+    //   justify-content: flex-start;
+    //   align-items: center;
+    //   z-index: 10;
+
+    //   img {
+    //     width: 100%;
+    //     height: 100%;
+    //     /* ensures the image never overflows the container. It stays contained within it's width and height and expands to fill it then stops once it reaches an edge */
+    //     object-fit: contain;
+    //   }
+    // }
 
     .cs-toggle {
       width: calc(56 / 16 * 1rem);
@@ -388,25 +411,25 @@
       display: none;
     }
 
-    .cs-logo {
-      width: 18.4%;
-      max-width: calc(350 / 16 * 1rem);
-      height: calc(32 / 16 * 1rem);
-      /* margin-right auto pushes everything away from it to the right */
-      margin: 0 auto 0 0;
-      padding: 0;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      z-index: 100;
+    // .cs-logo {
+    //   width: 18.4%;
+    //   max-width: calc(350 / 16 * 1rem);
+    //   height: calc(32 / 16 * 1rem);
+    //   /* margin-right auto pushes everything away from it to the right */
+    //   margin: 0 auto 0 0;
+    //   padding: 0;
+    //   display: flex;
+    //   justify-content: flex-start;
+    //   align-items: center;
+    //   z-index: 100;
 
-      img {
-        width: auto;
-        height: 100%;
-        /* ensures the image never overflows the container. It stays contained within it's width and height and expands to fill it then stops once it reaches an edge */
-        object-fit: contain;
-      }
-    }
+    //   img {
+    //     width: auto;
+    //     height: 100%;
+    //     /* ensures the image never overflows the container. It stays contained within it's width and height and expands to fill it then stops once it reaches an edge */
+    //     object-fit: contain;
+    //   }
+    // }
 
     .cs-contact-group {
       display: flex;
