@@ -1,0 +1,591 @@
+---
+title: "Harrisburg Web Design & Development | Susquehanna Web Designs"
+description: "Empower your small business with Susquehanna Web Designs, your local Harrisburg web design & development experts 
+dedicated to helping local small businesses thrive online. Discover reponsive, user-centric website solutions tailored to drive 
+your success!"
+preloadImg: "assets/images/bridge.jpg"
+permalink: "/locations/harrisburg-web-design/"
+eleventyNavigation:
+  key: Harrisburg
+  order: 700
+---
+
+{% extends "layouts/base.html" %} {% block head %}
+<link rel="stylesheet" href="/assets/css/local.css" />
+<link rel="stylesheet" href="/assets/css/critical.css" />
+
+<!-- Script for Netlify Identity -->
+<script
+  defer
+  src="https://identity.netlify.com/v1/netlify-identity-widget.js"
+></script>
+<script defer>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", (user) => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
+{% endblock %} {% block body %}
+
+<!-- ============================================ -->
+<!--                    Hero                      -->
+<!-- ============================================ -->
+<section id="hero-1349">
+  <div class="cs-container">
+    <div class="cs-content">
+      <span class="cs-topper">Susquehanna Web Designs</span>
+      <h1 class="cs-title">
+        Harrisburg Web Design Services for Small Business
+      </h1>
+      <p class="cs-text">
+        Custom Harrisburg web design services for small businesses with packages
+        starting at only $50/mo. No Wordpress or page-builders — our websites
+        are all hand-coded and managed by our in-house team of marketing
+        professionals!
+      </p>
+      <a href="" class="cs-button-solid">Free Consultation</a>
+    </div>
+  </div>
+  <!--Bubble Groups-->
+  <div class="cs-bubbles cs-bubbles1" aria-hidden="true"></div>
+  <div class="cs-bubbles cs-bubbles2" aria-hidden="true"></div>
+  <!-- Background Image, background image added in the css at 1600px for parallax effect -->
+  <picture class="cs-background">
+    <source
+      media="(max-width: 600px)"
+      srcset="assets/images/bridge_small.jpg"
+    />
+    <source media="(min-width: 601px)" srcset="assets/images/bridge.jpg" />
+    <img
+      decoding="async"
+      src="assets/images/bridge.jpg"
+      alt="Harrisburg web design professional"
+      width="2121"
+      height="1414"
+      aria-hidden="true"
+    />
+  </picture>
+</section>
+
+<!-- ============================================ -->
+<!--                  Services                    -->
+<!-- ============================================ -->
+
+<section id="services-1378">
+  <div class="cs-container">
+    <div class="cs-content">
+      <span class="cs-topper">What We Do</span>
+      <h2 class="cs-title">Harrisburg Web Design & Development Services</h2>
+      <p class="cs-text">
+        At Susquehanna Web Designs, we are dedicated to empowering small
+        businesses with top-tier and affordable web design and development
+        services. Based in Harrisburg, PA, we cater primarily to local clients
+        in the Harrisburg area and throughout central Pennsylvania. Our
+        experienced team of Harrisburg web design professionals crafts every
+        line of code by hand, guaranteeing optimal performance and a seamless
+        user experience for your customers.
+      </p>
+    </div>
+    <ul class="cs-card-group">
+      <li class="cs-item">
+        <picture class="cs-picture">
+          <img
+            class="cs-icon"
+            loading="lazy"
+            decoding="async"
+            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/agency-layers.svg"
+            alt="icon"
+            width="48"
+            height="48"
+          />
+        </picture>
+        <h3 class="cs-h3">Responsive Web Design</h3>
+        <p class="cs-item-text">
+          Our innovative mobile-first approach to web design ensures that your
+          website will be responsive to all screen sizes, from smartphones to
+          desktops. This contributes to better search engine rankings,
+          increasing your business' online exposure.
+        </p>
+        <a href="/" class="cs-link">
+          <img
+            class="cs-arrow"
+            decoding="async"
+            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/agency-arrow-upper-right.svg"
+            alt="arrow"
+            width="413"
+            height="374"
+            aria-hidden="true"
+          />
+        </a>
+      </li>
+      <li class="cs-item">
+        <picture class="cs-picture">
+          <img
+            class="cs-icon"
+            loading="lazy"
+            decoding="async"
+            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/agency-media.svg"
+            alt="icon"
+            width="48"
+            height="48"
+          />
+        </picture>
+        <h3 class="cs-h3">Pro Web Development</h3>
+        <p class="cs-item-text">
+          Whether your small business requires a simple, static web design or
+          comprehensive e-commerce solutions, our engineers can accommodate your
+          needs. We never use page-builders — our website are hand-coded,
+          increasing page speeds and security.
+        </p>
+        <a href="/" class="cs-link">
+          <img
+            class="cs-arrow"
+            decoding="async"
+            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/agency-arrow-upper-right.svg"
+            alt="arrow"
+            width="413"
+            height="374"
+            aria-hidden="true"
+          />
+        </a>
+      </li>
+      <li class="cs-item">
+        <picture class="cs-picture">
+          <img
+            class="cs-icon"
+            loading="lazy"
+            decoding="async"
+            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/agency-alert.svg"
+            alt="icon"
+            width="48"
+            height="48"
+          />
+        </picture>
+        <h3 class="cs-h3">Search Engine Optimization</h3>
+        <p class="cs-item-text">
+          We understand the pivotal role that web visibility plays in driving
+          your small business' success. Our developers are adept at search
+          engine optimization (SEO), incorporating both on-page and off-page
+          elements improve your website's search engine rankings.
+        </p>
+        <a href="/" class="cs-link">
+          <img
+            class="cs-arrow"
+            decoding="async"
+            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/agency-arrow-upper-right.svg"
+            alt="arrow"
+            width="413"
+            height="374"
+            aria-hidden="true"
+          />
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!--                   Portfolio                  -->
+<!-- ============================================ -->
+
+<!-- <section id="gallery-1374">
+  <div class="cs-container">
+    <div class="cs-content">
+      <span class="cs-topper">Our Portfolio</span>
+      <h2 class="cs-title">Our Recent Work</h2>
+      <p class="cs-text">
+        We specialize in designing and developing websites for small businesses
+        across the US.Every line of code is written by hand to ensure the best
+        performance, which helps bring in more customers to your site and bring
+        more revenue to your business.
+      </p>
+    </div>
+    <ul class="cs-image-group">
+
+
+
+       Card 1
+
+
+
+      <li class="cs-item">
+        <a href="/" class="cs-link">
+          <picture class="cs-picture">
+            <source
+              media="(max-width: 600px)"
+              srcset="
+                https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/agency-portfolio-1.png
+              "
+            />
+            <source
+              media="(min-width: 601px)"
+              srcset="
+                https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/agency-portfolio-1.png
+              "
+            />
+            <img
+              loading="lazy"
+              decoding="async"
+              src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/agency-portfolio-1.png"
+              alt="fancy house"
+              width="346"
+              height="346"
+            />
+          </picture>
+          <div class="cs-item-text">
+            <div class="cs-flex">
+              <h3 class="cs-h3">Voyage</h3>
+              <span class="cs-desc">A complete Travel Agency App UI</span>
+            </div>
+            <picture class="cs-icon-wrapper">
+              <img
+                class="cs-icon"
+                decoding="async"
+                src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/agency-arrow-upper-right.svg"
+                alt="arrow"
+                width="413"
+                height="374"
+                aria-hidden="true"
+              />
+            </picture>
+          </div>
+        </a>
+      </li>
+      
+      
+      
+      Card 2
+
+
+
+      <li class="cs-item">
+        <a href="/" class="cs-link">
+          <picture class="cs-picture">
+            <source
+              media="(max-width: 600px)"
+              srcset="
+                https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/agency-portfolio-2.png
+              "
+            />
+            <source
+              media="(min-width: 601px)"
+              srcset="
+                https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/agency-portfolio-2.png
+              "
+            />
+            <img
+              loading="lazy"
+              decoding="async"
+              src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/agency-portfolio-2.png"
+              alt="modern house"
+              width="346"
+              height="346"
+            />
+          </picture>
+          <div class="cs-item-text">
+            <div class="cs-flex">
+              <h3 class="cs-h3">Matcha and Co</h3>
+              <span class="cs-desc">A Tea Brand E-commerce Website</span>
+            </div>
+            <picture class="cs-icon-wrapper">
+              <img
+                class="cs-icon"
+                decoding="async"
+                src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/agency-arrow-upper-right.svg"
+                alt="arrow"
+                width="413"
+                height="374"
+                aria-hidden="true"
+              />
+            </picture>
+          </div>
+        </a>
+      </li>
+    </ul>
+    <a href="/" class="cs-button-solid">View All Works</a>
+  </div>
+  <div class="cs-bubbles" aria-hidden="true"></div>
+</section> -->
+<!-- ============================================ -->
+<!--                 Why Choose                   -->
+<!-- ============================================ -->
+
+<section id="why-choose-1371">
+  <div class="cs-container">
+    <div class="cs-content">
+      <span class="cs-topper">Why Choose Us</span>
+      <h2 class="cs-title">$0 Down, $50 Per Month, 6 Month Contract</h2>
+      <p class="cs-text">
+        Kickstart your online success in the local market with our Harrisburg
+        web design services, tailored to small businesses. Get started today
+        with a custom 8-page website without any upfront costs. For larger
+        websites or projects that require more extensive work, we also offer
+        tailored pricing to accommodate the additional pages, scope of work, and
+        time required.
+      </p>
+      <p class="cs-text">
+        <strong>
+          You will always retain full ownership of your domain, content,
+          listings, and profiles. Cancel your services at any time, free from
+          any hidden fees or complications.
+        </strong>
+      </p>
+    </div>
+    <ul class="cs-card-group">
+      <li class="cs-item">
+        <h3 class="cs-h3">
+          <img
+            class="cs-h3-icon"
+            aria-hidden="true"
+            loading="lazy"
+            decoding="async"
+            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/why1.svg"
+            alt="icon"
+            width="24"
+            height="24"
+          />
+          Hosting Fees Included
+        </h3>
+        <p class="cs-item-text">
+          We provide web hosting for your site at no additional charge.
+        </p>
+      </li>
+      <li class="cs-item">
+        <h3 class="cs-h3">
+          <img
+            class="cs-h3-icon"
+            aria-hidden="true"
+            loading="lazy"
+            decoding="async"
+            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/why2.svg"
+            alt="icon"
+            width="24"
+            height="24"
+          />
+          24/7 Customer Service
+        </h3>
+        <p class="cs-item-text">
+          Reach out directly to your us whenever you need to, without navigating
+          through phone trees or dealing with automated responses.
+        </p>
+      </li>
+      <li class="cs-item">
+        <h3 class="cs-h3">
+          <img
+            class="cs-h3-icon"
+            aria-hidden="true"
+            loading="lazy"
+            decoding="async"
+            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/why3.svg"
+            alt="icon"
+            width="24"
+            height="24"
+          />
+          Unmatched Page Speed
+        </h3>
+        <p class="cs-item-text">
+          Your site can achieve a perfect Google Page Speed score, providing a
+          significant boost to search engine rankings.
+        </p>
+      </li>
+      <li class="cs-item-picture">
+        <picture class="cs-picture">
+          <!--Mobile Image-->
+          <source
+            media="(max-width: 600px)"
+            srcset="assets/images/why_choose_img.jpg"
+          />
+          <!--Tablet and above Image-->
+          <source
+            media="(min-width: 601px)"
+            srcset="assets/images/why_choose_img.jpg"
+          />
+          <img
+            loading="lazy"
+            decoding="async"
+            src="assets/images/why_choose_img.jpg"
+            alt="people"
+            width="590"
+            height="418"
+          />
+        </picture>
+      </li>
+      <li class="cs-item">
+        <h3 class="cs-h3">
+          <img
+            class="cs-h3-icon"
+            aria-hidden="true"
+            loading="lazy"
+            decoding="async"
+            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/why4.svg"
+            alt="icon"
+            width="24"
+            height="24"
+          />
+          Unlimited Edits
+        </h3>
+        <p class="cs-item-text">
+          Looking to update your website? Let us know, and we guarantee to
+          implement the changes within the same day.
+        </p>
+      </li>
+      <li class="cs-item">
+        <h3 class="cs-h3">
+          <img
+            class="cs-h3-icon"
+            aria-hidden="true"
+            loading="lazy"
+            decoding="async"
+            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/why5.svg"
+            alt="icon"
+            width="24"
+            height="24"
+          />
+          Web Design & Development
+        </h3>
+        <p class="cs-item-text">
+          We provide unique, professional websites designed and coded for your
+          needs.
+        </p>
+      </li>
+      <li class="cs-item">
+        <h3 class="cs-h3">
+          <img
+            class="cs-h3-icon"
+            aria-hidden="true"
+            loading="lazy"
+            decoding="async"
+            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/why6.svg"
+            alt="icon"
+            width="24"
+            height="24"
+          />
+          Google Analytics
+        </h3>
+        <p class="cs-item-text">
+          We integrate your website with Google Analytics, allowing you to
+          monitor traffic and where it comes from.
+        </p>
+      </li>
+    </ul>
+    <a href="" class="cs-button-solid">Discover More</a>
+  </div>
+  <div class="cs-bubbles cs-bubbles1" aria-hidden="true"></div>
+  <div class="cs-bubbles cs-bubbles2" aria-hidden="true"></div>
+</section>
+
+<!-- ============================================ -->
+<!--                  Pricing                     -->
+<!-- ============================================ -->
+
+<section id="pricing-1384">
+  <div class="cs-container">
+    <div class="cs-content">
+      <span class="cs-topper">Pricing</span>
+      <h2 class="cs-title">Flexible Pricing Tailored to Your Needs</h2>
+      <p class="cs-text">
+        We offer several web design packages for small businesses, in addition
+        to custom pricing for additional pages and larger websites.
+      </p>
+    </div>
+    <ul class="cs-card-group">
+      <li class="cs-item">
+        <div class="cs-flex">
+          <span class="cs-package">Upfront</span>
+          <span class="cs-price">
+            $1,500
+            <span class="cs-duration"></span>
+          </span>
+          <div class="cs-tag">
+            <img
+              class="cs-icon"
+              aria-hidden="true"
+              src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/fire.svg"
+              decoding="async"
+              alt="fire"
+              width="16"
+              height="16"
+              loading="true"
+            />
+            Hot Deal
+          </div>
+        </div>
+        <ul class="cs-ul">
+          <li class="cs-li">Professionally Coded</li>
+          <li class="cs-li">Mobile-Optimized</li>
+          <li class="cs-li">Free Custom Domain</li>
+          <li class="cs-li">Custom Design</li>
+          <li class="cs-li">Up to 8 Pages</li>
+        </ul>
+        <a href="" class="cs-button-transparent">Get Now</a>
+      </li>
+      <li class="cs-item cs-popular">
+        <div class="cs-flex">
+          <span class="cs-package">Standard</span>
+          <span class="cs-price">
+            $50
+            <span class="cs-duration">/Month</span>
+          </span>
+          <div class="cs-tag">
+            <!-- <img
+              class="cs-icon"
+              aria-hidden="true"
+              src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/fire.svg"
+              decoding="async"
+              alt="fire"
+              width="16"
+              height="16"
+              loading="true"
+            /> -->
+            Recommended Package
+          </div>
+        </div>
+        <ul class="cs-ul">
+          <li class="cs-li">Unlimited Edits</li>
+          <li class="cs-li">Hosting fees Included</li>
+          <li class="cs-li">24/7 Customer Support</li>
+          <li class="cs-li">Redesign Anytime</li>
+          <li class="cs-li">Up to 8 Pages</li>
+        </ul>
+        <a href="" class="cs-button-transparent">Get Now</a>
+      </li>
+      <li class="cs-item">
+        <div class="cs-flex">
+          <span class="cs-package">Standard + Blog</span>
+          <span class="cs-price">
+            $200
+            <span class="cs-duration">/Month</span>
+          </span>
+          <div class="cs-tag">
+            <img
+              class="cs-icon"
+              aria-hidden="true"
+              src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/fire.svg"
+              decoding="async"
+              alt="fire"
+              width="16"
+              height="16"
+              loading="true"
+            />
+            Hot Deal
+          </div>
+        </div>
+        <ul class="cs-ul">
+          <li class="cs-li">Unlimited Edits</li>
+          <li class="cs-li">Hosting fees Included</li>
+          <li class="cs-li">24/7 Customer Support</li>
+          <li class="cs-li">Redesign Anytime</li>
+          <li class="cs-li">1 Monthly SEO-Optimized Blog Post</li>
+        </ul>
+        <a href="" class="cs-button-transparent">Read More</a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+{% include 'components/cta.html' %} {% endblock %}
