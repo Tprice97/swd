@@ -90,25 +90,25 @@
     }
 
     .cs-logo {
-      width: 100%;
-      max-width: calc(
-        210 / 16 * 1rem
-      ); // Adjust with the current size of the logo in pixels
-      height: calc(
-        29 / 16 * 1rem
-      ); // Adjust with the current size of the logo in pixels
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%; // Make sure the logo container takes the full height of the navbar
+      flex-shrink: 0; // Prevent the logo from shrinking
+      max-width: calc(210 / 16 * 1rem); // 210px wide on mobile/tablet
+      width: 100%; // Take the full width of the container
     }
 
     .cs-logo img {
-      width: 100%;
-      height: 100%;
+      height: auto; // Maintain aspect ratio
+      max-height: calc(29 / 16 * 1rem); // 29px tall on mobile/tablet
     }
 
     @media only screen and (min-width: 63.9375rem) {
       // 1023px
       .cs-logo {
-        max-width: calc(360 / 16 * 1rem); // 360px wide on desktop
-        height: calc(50 / 16 * 1rem); // 50px tall on desktop
+        max-width: calc(362 / 16 * 1rem); // 362px wide on desktop
+        height: auto; // Maintain aspect ratio
       }
     }
 
