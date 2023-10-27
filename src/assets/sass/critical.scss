@@ -89,49 +89,49 @@
       gap: calc(24 / 16 * 1rem);
     }
 
-    .cs-logo {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100%; // Make sure the logo container takes the full height of the navbar
-      flex-shrink: 0; // Prevent the logo from shrinking
-      max-width: calc(210 / 16 * 1rem); // 210px wide on mobile/tablet
-      width: 100%; // Take the full width of the container
-    }
-
-    .cs-logo img {
-      height: auto; // Maintain aspect ratio
-      max-height: calc(29 / 16 * 1rem); // 29px tall on mobile/tablet
-    }
-
-    @media only screen and (min-width: 63.9375rem) {
-      // 1023px
-      .cs-logo {
-        max-width: calc(362 / 16 * 1rem); // 362px wide on desktop
-        height: auto; // Maintain aspect ratio
-      }
-    }
-
     // .cs-logo {
-    //   width: auto;
-    //   max-width: calc(200 / 16 * 1rem);
-    //   height: 100%;
-    //   margin: 0 auto 0 0;
-    //   padding: 0;
-    //   /* prevents padding from affecting height and width */
-    //   box-sizing: border-box;
     //   display: flex;
-    //   justify-content: flex-start;
     //   align-items: center;
-    //   z-index: 10;
+    //   justify-content: center;
+    //   height: 100%; // Make sure the logo container takes the full height of the navbar
+    //   flex-shrink: 0; // Prevent the logo from shrinking
+    //   max-width: calc(210 / 16 * 1rem); // 210px wide on mobile/tablet
+    //   width: 100%; // Take the full width of the container
+    // }
 
-    //   img {
-    //     width: 100%;
-    //     height: 100%;
-    //     /* ensures the image never overflows the container. It stays contained within it's width and height and expands to fill it then stops once it reaches an edge */
-    //     object-fit: contain;
+    // .cs-logo img {
+    //   height: auto; // Maintain aspect ratio
+    //   max-height: calc(29 / 16 * 1rem); // 29px tall on mobile/tablet
+    // }
+
+    // @media only screen and (min-width: 63.9375rem) {
+    //   // 1023px
+    //   .cs-logo {
+    //     max-width: calc(362 / 16 * 1rem); // 362px wide on desktop
+    //     height: auto; // Maintain aspect ratio
     //   }
     // }
+
+    .cs-logo {
+      width: auto;
+      max-width: calc(200 / 16 * 1rem);
+      height: 100%;
+      margin: 0 auto 0 0;
+      padding: 0;
+      /* prevents padding from affecting height and width */
+      box-sizing: border-box;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      z-index: 10;
+
+      img {
+        width: 100%;
+        height: 100%;
+        /* ensures the image never overflows the container. It stays contained within it's width and height and expands to fill it then stops once it reaches an edge */
+        object-fit: contain;
+      }
+    }
 
     .cs-toggle {
       width: calc(56 / 16 * 1rem);
@@ -411,25 +411,25 @@
       display: none;
     }
 
-    // .cs-logo {
-    //   width: 18.4%;
-    //   max-width: calc(350 / 16 * 1rem);
-    //   height: calc(32 / 16 * 1rem);
-    //   /* margin-right auto pushes everything away from it to the right */
-    //   margin: 0 auto 0 0;
-    //   padding: 0;
-    //   display: flex;
-    //   justify-content: flex-start;
-    //   align-items: center;
-    //   z-index: 100;
+    .cs-logo {
+      width: 18.4%;
+      max-width: calc(350 / 16 * 1rem);
+      height: calc(55 / 16 * 1rem);
+      /* margin-right auto pushes everything away from it to the right */
+      margin: 0 auto 0 0;
+      padding: 0;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      z-index: 100;
 
-    //   img {
-    //     width: auto;
-    //     height: 100%;
-    //     /* ensures the image never overflows the container. It stays contained within it's width and height and expands to fill it then stops once it reaches an edge */
-    //     object-fit: contain;
-    //   }
-    // }
+      img {
+        width: auto;
+        height: 100%;
+        /* ensures the image never overflows the container. It stays contained within it's width and height and expands to fill it then stops once it reaches an edge */
+        object-fit: contain;
+      }
+    }
 
     .cs-contact-group {
       display: flex;
