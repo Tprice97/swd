@@ -9,12 +9,14 @@
   :root {
     --primary: #1a4d7f;
     --primaryLight: #3a6f9f;
-    --secondary: #f48b2c;
-    --secondaryLight: #6a8e95;
-    --accent: #28464b;
+    --secondary: #e57f2d;
+    --secondaryLight: #ffae6d;
+    --accent: #ff5722;
+    // --secondary: #f48b2c;
+    // --secondaryLight: #6a8e95;
+    // --accent: #28464b;
     --headerColor: #fdfcfa;
     --offWhite: #f6f6f6;
-    --primary: #1a4d7f;
     --bodyTextColor: #4e4b66;
     --bodyTextColorWhite: #fafbfc;
 
@@ -392,8 +394,8 @@
       .cs-phone-icon {
         width: calc(24 / 16 * 1rem);
         height: auto;
-        filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(161deg)
-          brightness(103%) contrast(101%);
+        // filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(161deg)
+        //   brightness(103%) contrast(101%);
         display: block;
       }
 
@@ -629,9 +631,10 @@
         gap: calc(24 / 16 * 1rem);
       }
 
-      //     .cs-toggle {
-      //       display: none;
-      //     }
+      //*** Do I need this class? ***//
+      .cs-toggle {
+        display: none;
+      }
 
       .cs-logo {
         width: 18.4%;
@@ -670,7 +673,13 @@
         justify-content: flex-start;
         align-items: center;
         gap: calc(8 / 16 * 1rem);
-        transition: opacity 0.3s, color 0.3s;
+        transition: opacity 0.3s, color 0.3s, transform 0.3s;
+
+        &:hover {
+          filter: invert(52%) sepia(99%) saturate(328%) hue-rotate(163deg)
+            brightness(101%) contrast(106%);
+          transform: scale(1.03);
+        }
       }
 
       .cs-phone-icon {
@@ -704,13 +713,14 @@
         transition: background-color 0.3s;
 
         &:hover {
-          background-color: var(--primaryLight);
-
-          .cs-social-icon {
-            filter: grayscale(1) brightness(10000%);
-            opacity: 1;
-          }
+          background-color: #3a6f9f;
         }
+      }
+
+      .cs-social-link:hover .cs-social-icon {
+        filter: brightness(0) saturate(100%) invert(52%) sepia(99%)
+          saturate(328%) hue-rotate(163deg) brightness(101%) contrast(106%);
+        opacity: 1;
       }
 
       .cs-social-icon {
@@ -756,6 +766,7 @@
         flex: none;
       }
 
+      /* Base styling for links */
       .cs-li-link {
         font-size: calc(16 / 16 * 1rem);
         line-height: 1.5em;
@@ -767,13 +778,47 @@
         transition: color 0.3s;
 
         &:hover {
-          color: var(--secondary);
+          color: #43b7ff;
         }
 
         &.cs-active {
-          color: var(--secondary);
+          /* **Changes from Original Code Start Here** */
+          position: relative; /* Reset position */
+          color: #43b7ff;
+          &:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -2px; /* Adjust this value to control the distance of the underline from the text */
+            width: 100%;
+            height: 2px; /* Adjust this value to control the thickness of the underline */
+            background-color: #43b7ff; /* Color of the underline */
+          }
+          /* **Changes from Original Code End Here** */
         }
       }
+
+      /*-- -------------------------- -->
+      <---          Original          -->
+      <--- -------------------------- -*/
+      // .cs-li-link {
+      //   font-size: calc(16 / 16 * 1rem);
+      //   line-height: 1.5em;
+      //   text-decoration: none;
+      //   margin: 0;
+      //   color: var(--offWhite);
+      //   display: block;
+      //   position: relative;
+      //   transition: color 0.3s;
+
+      //   &:hover {
+      //     color: #43b7ff;
+      //   }
+
+      //   &.cs-active {
+      //     box-shadow: inset 0 -4px 1px #43b7ff;
+      //   }
+      // }
 
       .cs-button-solid {
         font-size: calc(16 / 16 * 1rem);
