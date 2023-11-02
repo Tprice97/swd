@@ -31,6 +31,11 @@
   }
 
   #hero-1349 {
+    /* added */
+    max-height: 110vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     /* 250px - 500px - leaving extra space for the navigation */
     padding: clamp(15.625rem, 35.95vw, 25rem) calc(16 / 16 * 1rem) 0;
     /* 200px - 250px */
@@ -100,7 +105,7 @@
       text-align: inherit;
       letter-spacing: 0.1em;
       font-weight: 700;
-      color: #f6f6f6;
+      color: #fff;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
       margin-bottom: calc(8 / 16 * 1rem);
       display: block;
@@ -114,7 +119,7 @@
       text-align: inherit;
       max-width: 20ch;
       margin: 0 0 calc(16 / 16 * 1rem) 0;
-      color: #f6f6f6;
+      color: #fff;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
       position: relative;
     }
@@ -127,7 +132,7 @@
       /* 464px - 622px */
       max-width: clamp(29rem, 60vw, 38.785rem);
       margin: 0 0 calc(40 / 16 * 1rem) 0;
-      color: #f6f6f6;
+      color: #fff;
       text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     }
 
@@ -255,7 +260,7 @@
         content: "";
         width: calc(546 / 16 * 1em);
         height: calc(546 / 16 * 1em);
-        background: #3c638f;
+        background: var(--secondary);
         opacity: 0.8;
         border-radius: 50%;
         display: block;
@@ -302,9 +307,9 @@
       &:after {
         /* orange bubble */
         content: "";
-        width: calc(260 / 16 * 1rem);
-        height: calc(260 / 16 * 1rem);
-        background: #3c638f;
+        width: calc(300 / 16 * 1rem);
+        height: calc(300 / 16 * 1rem);
+        background: var(--secondary);
         opacity: 0.8;
         border-radius: 50%;
         display: block;
@@ -334,8 +339,30 @@
         content: "";
         width: 100%;
         height: 100%;
-        background: #000;
-        opacity: 0.6;
+        background: linear-gradient(
+          to top right,
+          rgba(0, 0, 0, 0.8),
+          transparent 275%
+        );
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        /* prevents the cursor from interacting with it */
+        pointer-events: none;
+      }
+
+      &:after {
+        /* Overlay */
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          to bottom left,
+          rgba(255, 255, 255, 0.4),
+          transparent 65%
+        );
         position: absolute;
         display: block;
         top: 0;
