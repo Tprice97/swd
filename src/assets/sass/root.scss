@@ -8,10 +8,11 @@
 @media only screen and (min-width: 0em) {
   :root {
     --primary: #1a4d7f;
-    --primaryLight: #3a6f9f;
+    --primaryLight: #43b7ff;
     --secondary: #e57f2d;
     --secondaryLight: #ffae6d;
     --accent: #ff5722;
+    // --primaryLight: #3a6f9f;
     // --secondary: #f48b2c;
     // --secondaryLight: #6a8e95;
     // --accent: #28464b;
@@ -253,21 +254,21 @@
         overflow: hidden;
       }
 
-      // &.scroll {
-      //   #cs-navigation {
-      //     width: 100%;
-      //     max-width: 100%;
-      //     top: 0;
+      &.scroll {
+        #cs-navigation {
+          width: 100%;
+          max-width: 100%;
+          top: 0;
 
-      //     &:before {
-      //       border-radius: 0;
-      //     }
+          &:before {
+            border-radius: 0;
+          }
 
-      //     .cs-ul-wrapper {
-      //       top: 100%;
-      //     }
-      //   }
-      // }
+          .cs-ul-wrapper {
+            top: 100%;
+          }
+        }
+      }
     }
 
     #cs-navigation {
@@ -606,7 +607,7 @@
       /* prevents padding from affecting height and width */
       box-sizing: border-box;
       background-color: #1a4d7f;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
       /* 12px - 24px */
       // border-radius: clamp(0.75rem, 2vw, 1.5rem);
       display: flex;
