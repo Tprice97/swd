@@ -284,25 +284,25 @@
       /* removed at larger desktop */
       bottom: calc(-260 / 16 * 1rem);
 
-      &:before {
-        /* white border bubble */
-        content: "";
-        width: calc(330 / 16 * 1rem);
-        height: calc(330 / 16 * 1rem);
-        background: transparent;
-        border: 1px solid #fff;
-        border-radius: 50%;
-        opacity: 1;
-        position: absolute;
-        display: block;
-        bottom: 0;
-        right: 0;
-        animation-name: floatAnimation;
-        animation-duration: 5s;
-        animation-timing-function: ease-in-out;
-        animation-fill-mode: forwards;
-        animation-iteration-count: infinite;
-      }
+      //   &:before {
+      //     /* white border bubble */
+      //     content: "";
+      //     width: calc(330 / 16 * 1rem);
+      //     height: calc(330 / 16 * 1rem);
+      //     background: transparent;
+      //     border: 1px solid #fff;
+      //     border-radius: 50%;
+      //     opacity: 1;
+      //     position: absolute;
+      //     display: block;
+      //     bottom: 0;
+      //     right: 0;
+      //     animation-name: floatAnimation;
+      //     animation-duration: 5s;
+      //     animation-timing-function: ease-in-out;
+      //     animation-fill-mode: forwards;
+      //     animation-iteration-count: infinite;
+      //   }
 
       &:after {
         /* orange bubble */
