@@ -9,24 +9,14 @@
   :root {
     --primary: #1a4d7f;
     --primaryLight: #43b7ff;
-    --secondary: #e57f2d;
+    --secondary: #ffab01;
     --secondaryLight: #ffae6d;
     --accent: #ff5722;
-    // --primaryLight: #3a6f9f;
-    // --secondary: #f48b2c;
-    // --secondaryLight: #6a8e95;
-    // --accent: #28464b;
     --headerColor: #fdfcfa;
     --offWhite: #f6f6f6;
     --bodyTextColor: #4e4b66;
+    --heroTextColor: #fff;
     --bodyTextColorWhite: #fafbfc;
-
-    // Primary: #1A4D7F (Deep Blue)
-    // Primary Light: #3A6F9F (Lighter Shade of Blue)
-    // Secondary: #6A8E95 (Muted Teal)
-    // Secondary Light: #9CBBC2 (Soft Teal)
-    // Accent: #28464B (Deep Green-Blue)
-    // Text Color: #F6F6F6 (Very Light Gray)
 
     /* 13px - 16px */
     --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
@@ -42,37 +32,44 @@
   .cs-logo img {
     filter: brightness(0) saturate(100%) invert(100%) sepia(54%) saturate(365%)
       hue-rotate(309deg) brightness(107%) contrast(98%);
+    transition: filter 0s;
+
+    // Filter to --primaryLight //
+    // &:hover {
+    //   filter: brightness(0) invert(61%) sepia(60%) saturate(1730%)
+    //     hue-rotate(178deg) brightness(101%) contrast(109%);
+    // }
   }
 
   // Text styles - can be replaced using CodeStitch's "Content Flair" Stitches
-  .cs-topper {
-    font-size: var(--topperFontSize);
-    font-weight: 700;
-    line-height: 1.2em;
-    margin-bottom: calc(5 / 16 * 1rem);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--secondary);
-    display: block;
-  }
+  // .cs-topper {
+  //   font-size: var(--topperFontSize);
+  //   font-weight: 700;
+  //   line-height: 1.2em;
+  //   margin-bottom: calc(5 / 16 * 1rem);
+  //   text-transform: uppercase;
+  //   letter-spacing: 0.1em;
+  //   color: var(--secondary);
+  //   display: block;
+  // }
 
-  .cs-title {
-    font-size: var(--headerFontSize);
-    font-weight: 900;
-    line-height: 1.2em;
-    margin-bottom: calc(10 / 16 * 1rem);
-    // margin: 0 auto calc(16 / 16 * 1rem);
-    color: var(--headerColor);
-    position: relative;
-  }
+  // .cs-title {
+  //   font-size: var(--headerFontSize);
+  //   font-weight: 900;
+  //   line-height: 1.2em;
+  //   margin-bottom: calc(10 / 16 * 1rem);
+  //   // margin: 0 auto calc(16 / 16 * 1rem);
+  //   color: var(--headerColor);
+  //   position: relative;
+  // }
 
-  .cs-text {
-    font-size: var(--bodyFontSize);
-    line-height: 1.5em;
-    width: 100%;
-    margin: 0 auto;
-    color: var(--bodyTextColor);
-  }
+  // .cs-text {
+  //   font-size: var(--bodyFontSize);
+  //   line-height: 1.5em;
+  //   width: 100%;
+  //   margin: 0 auto;
+  //   color: var(--bodyTextColor);
+  // }
 
   // Button - can be replaced using CodeStitch's "Button" Stitches
   //   .cs-button-solid {
@@ -124,44 +121,63 @@
   @media only screen and (min-width: 0em) {
     // Grab your fonts to locally host from https://google-webfonts-helper.herokuapp.com/fonts
 
-    /* roboto-regular - latin */
+    /* Define font-faces for various Poppins weights */
+    /* Define font-faces for various Poppins weights */
     @font-face {
-      font-style: normal;
-      font-family: "Roboto";
+      font-family: "Poppins";
       font-weight: 400;
-      font-display: swap;
-      src: local(""),
-        url("/assets/fonts/roboto-v29-latin-regular.woff2") format("woff2"),
-        /* Chrome 26+, Opera 23+, Firefox 39+ */
-          url("/assets/fonts/roboto-v29-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    }
-    /* roboto-700 - latin */
-    @font-face {
       font-style: normal;
-      font-family: "Roboto";
+      src: url("https://fonts.gstatic.com/s/poppins/v24/pxiDyp8kv8JHgFVrJJfTw07a.ttf")
+        format("truetype");
+    }
+
+    @font-face {
+      font-family: "Poppins";
+      font-weight: 500;
+      font-style: normal;
+      src: url("https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLGT9Z1xlFjZY.ttf")
+        format("truetype");
+    }
+
+    @font-face {
+      font-family: "Poppins";
+      font-weight: 600;
+      font-style: normal;
+      src: url("https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLEj6Z1xlFjZY.ttf")
+        format("truetype");
+    }
+
+    @font-face {
+      font-family: "Poppins";
       font-weight: 700;
-      font-display: swap;
-      src: local(""),
-        url("/assets/fonts/roboto-v29-latin-700.woff2") format("woff2"),
-        /* Chrome 26+, Opera 23+, Firefox 39+ */
-          url("/assets/fonts/roboto-v29-latin-700.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    }
-    /* roboto-900 - latin */
-    @font-face {
       font-style: normal;
-      font-family: "Roboto";
-      font-weight: 900;
-      font-display: swap;
-      src: local(""),
-        url("/assets/fonts/roboto-v29-latin-900.woff2") format("woff2"),
-        /* Chrome 26+, Opera 23+, Firefox 39+ */
-          url("/assets/fonts/roboto-v29-latin-900.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+      src: url("https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLFj6Z1xlFjZY.ttf")
+        format("truetype");
     }
+
+    @font-face {
+      font-family: "Poppins";
+      font-weight: 800;
+      font-style: normal;
+      src: url("https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLPT5Z1xlFjZY.ttf")
+        format("truetype");
+    }
+
+    @font-face {
+      font-family: "Poppins";
+      font-weight: 900;
+      font-style: normal;
+      src: url("https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLzT5Z1xlFjZY.ttf")
+        format("truetype");
+    }
+
+    /* Apply the font-family to specific elements */
 
     body,
     html {
-      font-family: "Roboto", Arial, sans-serif;
+      font-family: "Poppins", sans-serif;
       font-size: 100%;
+      font-weight: 400;
       margin: 0;
       padding: 0;
       color: var(--bodyTextColor);
@@ -192,8 +208,10 @@
     h4,
     h5,
     h6 {
+      font-family: "Poppins", sans-serif;
+      font-weight: 900;
       margin: 0;
-      color: var(--headerColor);
+      color: #fff;
     }
 
     p,
