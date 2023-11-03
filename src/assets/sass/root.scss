@@ -7,16 +7,54 @@
 /* CodeStitch Root and Helpers */
 @media only screen and (min-width: 0em) {
   :root {
-    --primary: #1a4d7f;
-    --primaryLight: #43b7ff;
-    --secondary: #ffab01;
-    --secondaryLight: #ffae6d;
-    --accent: #ff5722;
+    --primary: #073980; /* Main Background, Header/Footer, Text/Headings */
+    --primaryLight: #1e74b3; /* Secondary Text, Hover States, Borders */
+    --secondary: #30589E; /* Sub-Headers, Icons, Divider Lines */
+    --secondaryLight: #557ABF; /* Background for Callouts, Breadcrumbs, Inactive States */
+    --accent: #e55a5a; /* Primary CTAs, Important Buttons, Active Menu Items */
+    --accentLight: #e79a9e; /* Secondary CTAs, Alerts/Notifications, Progress Bars */
+    --accentLight2: #eac7cc;
+    --background: #f5f9ff; /* Main Content Area, Off-Canvas Menus, Modal Backgrounds */
+    // --neutral: #yourNeutralColor; /* Tertiary Buttons, Form Fields, Pagination Controls */
+    --navHover: #befcff;
+    --navActive: #8afaff;
+
+    --accentLight2: #eac7cc;
+
+    --cardColor: #eef2f8;
+    --pricingCard: #d5deee;
+    --pricingCardSecondary: #cbdff0;
+
+    --accentCard: #fce4e6;
+
+
+    --lightGray: #cad6e8;
+    --lightGray2: #eaeef4;
+    --lightGray3:#e0e0e0
+
     --headerColor: #fdfcfa;
     --offWhite: #f6f6f6;
     --bodyTextColor: #4e4b66;
     --heroTextColor: #fff;
     --bodyTextColorWhite: #fafbfc;
+
+    // --primaryLight: ##0050b3;
+    // --primary3: #0067e6;
+    // --primary4: #1a81ff;
+    // --primary5: #4d9dff
+    // --tertiary: #80d2ff;
+    // --tertiary2: #43b7ff;
+    // --tertiary3: #bfe9ff;
+    // --lightBlue: #ccf0ff
+    // --primary: #1a4d7f;
+    // --primaryLight: #43b7ff;
+    // --secondary: #124459;
+    // --tertiary: #9ae1ff
+    // --lightBlue: #ccf0ff
+    // --orange: #ffab01;
+    // --orangeLight: #ffae6d;
+    // --accent: #ff5722;
+    // --ctaButton: #2f80b3;
 
     /* 13px - 16px */
     --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
@@ -302,7 +340,7 @@
       padding: clamp(0.75rem, 2vw, 1.5rem);
       /* prevents padding from affecting height and width */
       box-sizing: border-box;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
       /* 12px - 24px */
       // border-radius: clamp(0.75rem, 2vw, 1.5rem);
       position: fixed;
@@ -403,26 +441,26 @@
         z-index: 10;
       }
 
-      .cs-phone {
-        font-size: calc(16 / 16 * 1rem);
-        line-height: 1.5em;
-        text-decoration: none;
-        margin: 0;
-        color: var(--offWhite);
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        gap: calc(8 / 16 * 1rem);
-        transition: opacity 0.3s, color 0.3s;
-      }
+      // .cs-phone {
+      //   font-size: calc(16 / 16 * 1rem);
+      //   line-height: 1.5em;
+      //   text-decoration: none;
+      //   margin: 0;
+      //   color: var(--offWhite);
+      //   display: flex;
+      //   justify-content: flex-start;
+      //   align-items: center;
+      //   gap: calc(8 / 16 * 1rem);
+      //   transition: opacity 0.3s, color 0.3s;
+      // }
 
-      .cs-phone-icon {
-        width: calc(24 / 16 * 1rem);
-        height: auto;
-        // filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(161deg)
-        //   brightness(103%) contrast(101%);
-        display: block;
-      }
+      // .cs-phone-icon {
+      //   width: calc(24 / 16 * 1rem);
+      //   height: auto;
+      //   // filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(161deg)
+      //   //   brightness(103%) contrast(101%);
+      //   display: block;
+      // }
 
       .cs-social {
         display: none;
@@ -457,7 +495,7 @@
         width: 100%;
         height: 2px;
         border-radius: 2px;
-        background-color: var(--offWhite);
+        background-color: #fff;
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
@@ -576,16 +614,16 @@
         line-height: 1.2em;
         text-decoration: none;
         margin: 0;
-        color: var(--offWhite);
+        color: #fff;
         display: inline-block;
         position: relative;
 
         &.cs-active {
-          color: var(--secondary);
+          color: var(--navActive);
         }
 
         &:hover {
-          color: var(--secondary);
+          color: var(--navHover);
         }
       }
 
@@ -622,22 +660,19 @@
     #cs-navigation {
       width: 100%;
       max-width: 100%;
-      height: calc(96 / 16 * 1rem);
-      // height: calc(96 / 16 * 1rem);
+      height: calc(112 / 16 * 1rem);
+
       border-radius: 0;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
       top: 0;
       /* 12px - 24px */
       padding: clamp(0.75rem, 2vw, 1.5rem) 0;
       /* prevents padding from affecting height and width */
       box-sizing: border-box;
-      background-color: #1a4d7f;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-      /* 12px - 24px */
-      // border-radius: clamp(0.75rem, 2vw, 1.5rem);
+      background-color: var(--primary);
       display: flex;
       align-items: center;
       position: fixed;
-      // top: calc(32 / 16 * 1rem);
       left: 50%;
       z-index: 10000;
       transform: translateX(-50%);
@@ -656,7 +691,6 @@
         gap: calc(24 / 16 * 1rem);
       }
 
-      //*** Do I need this class? ***//
       .cs-toggle {
         display: none;
       }
@@ -664,7 +698,7 @@
       .cs-logo {
         width: 18.4%;
         max-width: calc(350 / 16 * 1rem);
-        height: calc(55 / 16 * 1rem);
+        height: calc(64 / 16 * 1rem);
         /* margin-right auto pushes everything away from it to the right */
         margin: 0 auto 0 0;
         padding: 0;
@@ -688,75 +722,122 @@
         gap: calc(24 / 16 * 1rem);
       }
 
-      .cs-phone {
+      .cs-header-button {
         font-size: calc(16 / 16 * 1rem);
-        line-height: 1.5em;
+        // line-height: calc(56 / 16 * 1rem);
+        line-height: clamp(2.875em, 5.5vw, 3.5em);
         text-decoration: none;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+        font-weight: 700;
+        overflow: hidden;
         margin: 0;
-        color: var(--offWhite);
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        gap: calc(8 / 16 * 1rem);
-        transition: opacity 0.3s, color 0.3s, transform 0.3s;
-
-        &:hover {
-          filter: invert(52%) sepia(99%) saturate(328%) hue-rotate(163deg)
-            brightness(101%) contrast(106%);
-          transform: scale(1.03);
+        color: #fff;
+        padding: 0 calc(48 / 16 * 1rem);
+        border-radius: calc(30 / 16 * 1rem);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        border: 1px solid transparent;
+        background-color: var(--accent);
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        transition: color 0.3s;
+  
+        &:before {
+          content: "";
+          position: absolute;
+          display: block;
+          height: 100%;
+          width: 0%;
+          background: #e86b6b;
+          opacity: 1;
+          top: 0;
+          left: 0;
+          z-index: -1;
+          transition: width 0.3s;
+        }
+  
+        &:hover,
+        &:focus {
+          text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+          // border-color: #ffffff;
+        }
+  
+        &:hover:before,
+        &:focus:before {
+          width: 100%;
         }
       }
 
-      .cs-phone-icon {
-        width: calc(24 / 16 * 1rem);
-        height: auto;
-        filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(161deg)
-          brightness(103%) contrast(101%);
-        display: block;
-      }
+      // .cs-phone {
+      //   font-size: calc(16 / 16 * 1rem);
+      //   line-height: 1.5em;
+      //   text-decoration: none;
+      //   margin: 0;
+      //   color: var(--offWhite);
+      //   display: flex;
+      //   justify-content: flex-start;
+      //   align-items: center;
+      //   gap: calc(8 / 16 * 1rem);
+      //   transition: opacity 0.3s, color 0.3s, transform 0.3s;
 
-      .cs-social {
-        height: calc(32 / 16 * 1rem);
-        visibility: visible;
-        opacity: 1;
-        display: none;
-        justify-content: center;
-        align-items: center;
-        gap: calc(8 / 16 * 1rem);
-        transition: opacity 0.3s, visibility 0.3s, height 0.3s;
-      }
+      //   &:hover {
+      //     filter: invert(52%) sepia(99%) saturate(328%) hue-rotate(163deg)
+      //       brightness(101%) contrast(106%);
+      //     transform: scale(1.03);
+      //   }
+      // }
 
-      .cs-social-link {
-        text-decoration: none;
-        width: calc(32 / 16 * 1rem);
-        height: calc(32 / 16 * 1rem);
-        background-color: var(--primary);
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: background-color 0.3s;
+      // .cs-phone-icon {
+      //   width: calc(24 / 16 * 1rem);
+      //   height: auto;
+      //   filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(161deg)
+      //     brightness(103%) contrast(101%);
+      //   display: block;
+      // }
 
-        &:hover {
-          background-color: #3a6f9f;
-        }
-      }
+      // .cs-social {
+      //   height: calc(32 / 16 * 1rem);
+      //   visibility: visible;
+      //   opacity: 1;
+      //   display: none;
+      //   justify-content: center;
+      //   align-items: center;
+      //   gap: calc(8 / 16 * 1rem);
+      //   transition: opacity 0.3s, visibility 0.3s, height 0.3s;
+      // }
 
-      .cs-social-link:hover .cs-social-icon {
-        filter: brightness(0) saturate(100%) invert(52%) sepia(99%)
-          saturate(328%) hue-rotate(163deg) brightness(101%) contrast(106%);
-        opacity: 1;
-      }
+      // .cs-social-link {
+      //   text-decoration: none;
+      //   width: calc(32 / 16 * 1rem);
+      //   height: calc(32 / 16 * 1rem);
+      //   background-color: var(--primary);
+      //   border-radius: 50%;
+      //   display: flex;
+      //   justify-content: center;
+      //   align-items: center;
+      //   transition: background-color 0.3s;
 
-      .cs-social-icon {
-        width: calc(16 / 16 * 1rem);
-        height: auto;
-        opacity: 0.6;
-        display: block;
-        filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(161deg)
-          brightness(103%) contrast(101%);
-        transition: opacity 0.3s;
-      }
+      //   &:hover {
+      //     background-color: var(--secondary);
+      //   }
+      // }
+
+      // .cs-social-link:hover .cs-social-icon {
+      //   filter: brightness(0) saturate(100%) invert(52%) sepia(99%)
+      //     saturate(328%) hue-rotate(163deg) brightness(101%) contrast(106%);
+      //   opacity: 1;
+      // }
+
+      // .cs-social-icon {
+      //   width: calc(16 / 16 * 1rem);
+      //   height: auto;
+      //   opacity: 0.6;
+      //   display: block;
+      //   filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(161deg)
+      //     brightness(103%) contrast(101%);
+      //   transition: opacity 0.3s;
+      // }
 
       .cs-ul-wrapper {
         height: 100%;
@@ -794,57 +875,38 @@
       /* Base styling for links */
       .cs-li-link {
         font-size: calc(16 / 16 * 1rem);
+        // text-transform: uppercase;
+        font-weight: 700;
         line-height: 1.5em;
         text-decoration: none;
         margin: 0;
-        color: var(--offWhite);
+        color: #e3e3e3;
         display: block;
         position: relative;
         transition: color 0.3s;
 
         &:hover {
-          color: #43b7ff;
+          color: #a9c5e9;
         }
 
         &.cs-active {
           /* **Changes from Original Code Start Here** */
           position: relative; /* Reset position */
-          color: #43b7ff;
+          // color: #befcff;
+          color: #a9c5e9;
           &:before {
             content: "";
             position: absolute;
             left: 0;
             bottom: -4px; /* Adjust this value to control the distance of the underline from the text */
             width: 100%;
-            height: 3px; /* Adjust this value to control the thickness of the underline */
-            background-color: var(--primaryLight);
-            background-color: var(--secondary); /* Color of the underline */
+            height: 2px; /* Adjust this value to control the thickness of the underline */
+            background-color: var(--primary);
+            background-color: #a9c5e9; /* Color of the underline */
           }
           /* **Changes from Original Code End Here** */
         }
       }
-
-      /*-- -------------------------- -->
-      <---          Original          -->
-      <--- -------------------------- -*/
-      // .cs-li-link {
-      //   font-size: calc(16 / 16 * 1rem);
-      //   line-height: 1.5em;
-      //   text-decoration: none;
-      //   margin: 0;
-      //   color: var(--offWhite);
-      //   display: block;
-      //   position: relative;
-      //   transition: color 0.3s;
-
-      //   &:hover {
-      //     color: #43b7ff;
-      //   }
-
-      //   &.cs-active {
-      //     box-shadow: inset 0 -4px 1px #43b7ff;
-      //   }
-      // }
 
       .cs-button-solid {
         font-size: calc(16 / 16 * 1rem);
@@ -1026,7 +1088,7 @@
         padding: clamp(1.5rem, 5.18vw, 3rem) clamp(1rem, 4vw, 3rem);
         /* prevents flexbox from affecting height and width */
         box-sizing: border-box;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
         background-color: #f4f4f4;
         border-radius: calc(16 / 16 * 1rem);
         display: flex;

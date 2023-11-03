@@ -6,29 +6,29 @@
 
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-  @keyframes floatAnimation {
-    0% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-2rem);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
+  // @keyframes floatAnimation {
+  //   0% {
+  //     transform: translateY(0);
+  //   }
+  //   50% {
+  //     transform: translateY(-2rem);
+  //   }
+  //   100% {
+  //     transform: translateY(0);
+  //   }
+  // }
 
-  @keyframes floatAnimation2 {
-    0% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-3rem);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
+  // @keyframes floatAnimation2 {
+  //   0% {
+  //     transform: translateY(0);
+  //   }
+  //   50% {
+  //     transform: translateY(-3rem);
+  //   }
+  //   100% {
+  //     transform: translateY(0);
+  //   }
+  // }
 
   #hero-1349 {
     /* added */
@@ -105,7 +105,7 @@
       text-align: inherit;
       letter-spacing: 0.1em;
       font-weight: 700;
-      color: var(--secondary);
+      color: #fff;
       margin-bottom: calc(8 / 16 * 1rem);
       display: block;
     }
@@ -143,15 +143,16 @@
       font-weight: 700;
       overflow: hidden;
       margin: 0;
-      color: var(--headerColor);
+      color: #fff;
       padding: 0 calc(48 / 16 * 1rem);
       border-radius: calc(30 / 16 * 1rem);
-      background-color: var(--primary);
-      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.1);
+      // background-color: var(--ctaButton);
+      background-color: #ff6b6b;
       display: inline-block;
       position: relative;
       z-index: 1;
-      transition: box-shadow 0.3s, color 0.3s;
+      transition: color 0.3s;
 
       &:before {
         content: "";
@@ -159,7 +160,8 @@
         display: block;
         height: 100%;
         width: 0%;
-        background: var(--primaryLight);
+        // background: var(--primaryLight);
+        background: #e55a5a;
         opacity: 1;
         top: 0;
         left: 0;
@@ -169,10 +171,8 @@
 
       &:hover,
       &:focus {
-        color: #333333;
-        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
-        // box-shadow: 0px 4px 6px rgba(50, 50, 93, 0.11),
-        //   0px 1px 3px rgba(0, 0, 0, 0.08);
+        color: #f4f4f4;
+        box-shadow: 0px 6px 12px rgba(255, 255, 255, 0.15);
       }
 
       &:hover:before,
@@ -181,149 +181,89 @@
       }
     }
 
-    // .cs-button-solid {
-    //   font-size: calc(16 / 16 * 1rem);
-    //   line-height: calc(56 / 16 * 1rem);
-    //   text-decoration: none;
-    //   font-weight: 700;
-    //   overflow: hidden;
-    //   margin: 0;
-    //   color: #fff;
-    //   padding: 0 calc(48 / 16 * 1rem);
-    //   border-radius: calc(30 / 16 * 1rem);
-    //   background-color: #5e799f;
-    //   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    //   display: inline-block;
-    //   position: relative;
-    //   z-index: 1;
-    //   transition: box-shadow 0.3s, color 0.3s;
+    // .cs-bubbles {
+    //   /* this scales the children inside of it down. They're all in ems so they pull from the parent font size for their value of em, in this case, the value of em is tied to the viewwidth size and stops growing when the font size is equal to 1em, which it pulls from the nearst parent with a declred font size (which is the html tag, and that tag is 16px by default) */
+    //   font-size: min(2vw, 0.5em);
+    //   position: absolute;
+    //   z-index: -1;
+    // }
 
-    //   &:before {
+    // .cs-bubbles1 {
+    //   width: calc(680 / 16 * 1em);
+    //   height: calc(724 / 16 * 1em);
+    //   right: calc(-190 / 16 * 1rem);
+    //   /* changes to 172 at large desktop */
+    //   top: 0;
+
+    //   &:after {
+    //     /* orange bubble */
     //     content: "";
-    //     position: absolute;
+    //     width: calc(546 / 16 * 1em);
+    //     height: calc(546 / 16 * 1em);
+    //     background: var(--secondary);
+    //     opacity: 0.8;
+    //     border-radius: 50%;
     //     display: block;
-    //     height: 100%;
-    //     width: 0%;
-    //     background: #3c638f;
-    //     opacity: 1;
-    //     top: 0;
-    //     left: 0;
+    //     position: absolute;
+    //     bottom: 0;
+    //     right: 0;
     //     z-index: -1;
-    //     transition: width 0.3s;
-    //   }
-
-    //   &:hover {
-    //     color: #fff;
-    //     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
-    //     &:before {
-    //       width: 100%;
-    //     }
+    //     animation-name: floatAnimation2;
+    //     animation-duration: 10s;
+    //     animation-timing-function: ease-in-out;
+    //     animation-fill-mode: forwards;
+    //     animation-iteration-count: infinite;
     //   }
     // }
 
-    .cs-bubbles {
-      /* this scales the children inside of it down. They're all in ems so they pull from the parent font size for their value of em, in this case, the value of em is tied to the viewwidth size and stops growing when the font size is equal to 1em, which it pulls from the nearst parent with a declred font size (which is the html tag, and that tag is 16px by default) */
-      font-size: min(2vw, 0.5em);
-      position: absolute;
-      z-index: -1;
-    }
+    // .cs-bubbles2 {
+    //   width: calc(330 / 16 * 1rem);
+    //   height: calc(476 / 16 * 1rem);
+    //   /* changes to 160px at larger desktop */
+    //   left: calc(-220 / 16 * 1rem);
+    //   /* removed at larger desktop */
+    //   bottom: calc(-260 / 16 * 1rem);
 
-    .cs-bubbles1 {
-      width: calc(680 / 16 * 1em);
-      height: calc(724 / 16 * 1em);
-      right: calc(-190 / 16 * 1rem);
-      /* changes to 172 at large desktop */
-      top: 0;
+    //   &:before {
+    //     /* white border bubble */
+    //     content: "";
+    //     width: calc(330 / 16 * 1rem);
+    //     height: calc(330 / 16 * 1rem);
+    //     background: transparent;
+    //     border: 1px solid #fff;
+    //     border-radius: 50%;
+    //     opacity: 1;
+    //     position: absolute;
+    //     display: block;
+    //     bottom: 0;
+    //     right: 0;
+    //     animation-name: floatAnimation;
+    //     animation-duration: 5s;
+    //     animation-timing-function: ease-in-out;
+    //     animation-fill-mode: forwards;
+    //     animation-iteration-count: infinite;
+    //   }
 
-      // &:before {
-      //   /* white border bubble */
-      //   content: "";
-      //   width: calc(622 / 16 * 1em);
-      //   height: calc(622 / 16 * rem);
-      //   background: transparent;
-      //   border: 1px solid #fff;
-      //   border-radius: 50%;
-      //   opacity: 1;
-      //   position: absolute;
-      //   display: block;
-      //   top: 0;
-      //   left: 0;
-      //   animation-name: floatAnimation;
-      //   animation-duration: 7s;
-      //   animation-timing-function: ease-in-out;
-      //   animation-fill-mode: forwards;
-      //   animation-iteration-count: infinite;
-      // }
-
-      &:after {
-        /* orange bubble */
-        content: "";
-        width: calc(546 / 16 * 1em);
-        height: calc(546 / 16 * 1em);
-        background: var(--secondary);
-        opacity: 0.8;
-        border-radius: 50%;
-        display: block;
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        z-index: -1;
-        animation-name: floatAnimation2;
-        animation-duration: 10s;
-        animation-timing-function: ease-in-out;
-        animation-fill-mode: forwards;
-        animation-iteration-count: infinite;
-      }
-    }
-
-    .cs-bubbles2 {
-      width: calc(330 / 16 * 1rem);
-      height: calc(476 / 16 * 1rem);
-      /* changes to 160px at larger desktop */
-      left: calc(-220 / 16 * 1rem);
-      /* removed at larger desktop */
-      bottom: calc(-260 / 16 * 1rem);
-
-      //   &:before {
-      //     /* white border bubble */
-      //     content: "";
-      //     width: calc(330 / 16 * 1rem);
-      //     height: calc(330 / 16 * 1rem);
-      //     background: transparent;
-      //     border: 1px solid #fff;
-      //     border-radius: 50%;
-      //     opacity: 1;
-      //     position: absolute;
-      //     display: block;
-      //     bottom: 0;
-      //     right: 0;
-      //     animation-name: floatAnimation;
-      //     animation-duration: 5s;
-      //     animation-timing-function: ease-in-out;
-      //     animation-fill-mode: forwards;
-      //     animation-iteration-count: infinite;
-      //   }
-
-      &:after {
-        /* orange bubble */
-        content: "";
-        width: calc(300 / 16 * 1rem);
-        height: calc(300 / 16 * 1rem);
-        background: var(--secondary);
-        opacity: 0.8;
-        border-radius: 50%;
-        display: block;
-        position: absolute;
-        top: 0;
-        right: calc(40 / 16 * 1rem);
-        z-index: -1;
-        animation-name: floatAnimation2;
-        animation-duration: 14s;
-        animation-timing-function: ease-in-out;
-        animation-fill-mode: forwards;
-        animation-iteration-count: infinite;
-      }
-    }
+    //   &:after {
+    //     /* orange bubble */
+    //     content: "";
+    //     width: calc(300 / 16 * 1rem);
+    //     height: calc(300 / 16 * 1rem);
+    //     background: var(--secondary);
+    //     opacity: 0.8;
+    //     border-radius: 50%;
+    //     display: block;
+    //     position: absolute;
+    //     top: 0;
+    //     right: calc(40 / 16 * 1rem);
+    //     z-index: -1;
+    //     animation-name: floatAnimation2;
+    //     animation-duration: 14s;
+    //     animation-timing-function: ease-in-out;
+    //     animation-fill-mode: forwards;
+    //     animation-iteration-count: infinite;
+    //   }
+    // }
 
     .cs-background {
       width: 100%;
@@ -334,35 +274,38 @@
       left: 0;
       z-index: -2;
 
+      // &:before {
+      //   /* Overlay */
+      //   content: "";
+      //   width: 100%;
+      //   height: 100%;
+      //   /* Gradient with color stops */
+      //   background: linear-gradient(
+      //     to top,
+      //     rgba(0, 31, 63, 0) 0%,
+      //     /* transparent at the bottom */ rgba(0, 31, 63, 0.8) 50%,
+      //     /* starting to get color halfway */ rgba(0, 31, 63, 0.7) 100%
+      //   ); /* fully opaque color at the top */
+      //   position: absolute;
+      //   display: block;
+      //   bottom: 0;
+      //   left: 0;
+      //   z-index: 1;
+      //   /* prevents the cursor from interacting with it */
+      //   pointer-events: none;
+      // }
+
       &:before {
         /* Overlay */
         content: "";
         width: 100%;
         height: 100%;
-        background: linear-gradient(
-          to top right,
-          rgba(0, 0, 0, 0.8),
-          transparent 275%
-        );
-        position: absolute;
-        display: block;
-        top: 0;
-        left: 0;
-        z-index: 1;
-        /* prevents the cursor from interacting with it */
-        pointer-events: none;
-      }
-
-      &:after {
-        /* Overlay */
-        content: "";
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          to bottom left,
-          rgba(255, 255, 255, 0.4),
-          transparent 65%
-        );
+        background: rgba(
+          0,
+          31,
+          63,
+          0.8
+        ); /* Adjust the 0.7 value for desired opacity */
         position: absolute;
         display: block;
         top: 0;
@@ -384,69 +327,34 @@
       }
     }
   }
-}
 
-/* Tablet - 768px */
-@media only screen and (min-width: 48rem) {
-  #hero-1349 {
-    .cs-container {
-      align-items: flex-start;
-    }
+  /* Tablet - 768px */
+  @media only screen and (min-width: 48rem) {
+    #hero-1349 {
+      .cs-container {
+        align-items: flex-start;
+      }
 
-    .cs-content {
-      text-align: left;
-      align-items: flex-start;
-    }
-
-    .cs-bubbles {
-      font-size: 1em;
-    }
-
-    .cs-bubbles1 {
-      /* changes to auto at large desktop */
-      right: calc(-428 / 16 * 1rem);
-    }
-  }
-}
-
-/* Large Desktop - 1300px */
-@media only screen and (min-width: 81.25rem) {
-  #hero-1349 {
-    .cs-bubbles1 {
-      /* 200px - 450px */
-      margin-left: clamp(12.5rem, 20vw, 28.125rem);
-      top: calc(172 / 16 * 1rem);
-      right: auto;
-      left: 50%;
-    }
-  }
-}
-
-/* Large Desktop Parallax Effect - 1600px */
-@media only screen and (min-width: 100rem) {
-  #hero-1349 {
-    .cs-background {
-      background: url("../images//home/capitol.jpg");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      img {
-        display: none;
+      .cs-content {
+        text-align: left;
+        align-items: flex-start;
       }
     }
   }
-}
 
-/* Larger Desktop - 1800px */
-@media only screen and (min-width: 112.5rem) {
-  #hero-1349 {
-    .cs-bubbles2 {
-      margin-right: calc(800 / 16 * 1rem);
-      right: 50%;
-      left: auto;
-      top: calc(210 / 16 * 1rem);
-      bottom: auto;
+  /* Large Desktop Parallax Effect - 1600px */
+  @media only screen and (min-width: 81.25rem) {
+    #hero-1349 {
+      .cs-background {
+        background: url("../images/home/capitol.webp");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        img {
+          display: none;
+        }
+      }
     }
   }
 }
