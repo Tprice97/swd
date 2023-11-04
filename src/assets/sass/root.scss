@@ -661,15 +661,15 @@
       width: 100%;
       max-width: 100%;
       height: calc(112 / 16 * 1rem);
-
       border-radius: 0;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      // box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
       top: 0;
       /* 12px - 24px */
       padding: clamp(0.75rem, 2vw, 1.5rem) 0;
       /* prevents padding from affecting height and width */
       box-sizing: border-box;
-      background-color: var(--primary);
+      background: transparent;
+      // background: var(--primary);
       display: flex;
       align-items: center;
       position: fixed;
@@ -677,6 +677,11 @@
       z-index: 10000;
       transform: translateX(-50%);
       transition: top 0.3s, border-radius 0.3s, width 0.3s, max-width 0.3s;
+
+      &.hidden {
+        top: -100%; // This will hide the navigation by moving it out of view
+        transition: top 0.3s;
+      }
 
       .cs-container {
         width: 100%;
@@ -727,14 +732,14 @@
         // line-height: calc(56 / 16 * 1rem);
         line-height: clamp(2.875em, 5.5vw, 3.5em);
         text-decoration: none;
-        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
         font-weight: 700;
         overflow: hidden;
         margin: 0;
         color: #fff;
         padding: 0 calc(48 / 16 * 1rem);
         border-radius: calc(30 / 16 * 1rem);
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
         border: 1px solid transparent;
         background-color: var(--accent);
         display: inline-block;
@@ -759,7 +764,7 @@
         &:hover,
         &:focus {
           text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
           // border-color: #ffffff;
         }
   
@@ -768,76 +773,6 @@
           width: 100%;
         }
       }
-
-      // .cs-phone {
-      //   font-size: calc(16 / 16 * 1rem);
-      //   line-height: 1.5em;
-      //   text-decoration: none;
-      //   margin: 0;
-      //   color: var(--offWhite);
-      //   display: flex;
-      //   justify-content: flex-start;
-      //   align-items: center;
-      //   gap: calc(8 / 16 * 1rem);
-      //   transition: opacity 0.3s, color 0.3s, transform 0.3s;
-
-      //   &:hover {
-      //     filter: invert(52%) sepia(99%) saturate(328%) hue-rotate(163deg)
-      //       brightness(101%) contrast(106%);
-      //     transform: scale(1.03);
-      //   }
-      // }
-
-      // .cs-phone-icon {
-      //   width: calc(24 / 16 * 1rem);
-      //   height: auto;
-      //   filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(161deg)
-      //     brightness(103%) contrast(101%);
-      //   display: block;
-      // }
-
-      // .cs-social {
-      //   height: calc(32 / 16 * 1rem);
-      //   visibility: visible;
-      //   opacity: 1;
-      //   display: none;
-      //   justify-content: center;
-      //   align-items: center;
-      //   gap: calc(8 / 16 * 1rem);
-      //   transition: opacity 0.3s, visibility 0.3s, height 0.3s;
-      // }
-
-      // .cs-social-link {
-      //   text-decoration: none;
-      //   width: calc(32 / 16 * 1rem);
-      //   height: calc(32 / 16 * 1rem);
-      //   background-color: var(--primary);
-      //   border-radius: 50%;
-      //   display: flex;
-      //   justify-content: center;
-      //   align-items: center;
-      //   transition: background-color 0.3s;
-
-      //   &:hover {
-      //     background-color: var(--secondary);
-      //   }
-      // }
-
-      // .cs-social-link:hover .cs-social-icon {
-      //   filter: brightness(0) saturate(100%) invert(52%) sepia(99%)
-      //     saturate(328%) hue-rotate(163deg) brightness(101%) contrast(106%);
-      //   opacity: 1;
-      // }
-
-      // .cs-social-icon {
-      //   width: calc(16 / 16 * 1rem);
-      //   height: auto;
-      //   opacity: 0.6;
-      //   display: block;
-      //   filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(161deg)
-      //     brightness(103%) contrast(101%);
-      //   transition: opacity 0.3s;
-      // }
 
       .cs-ul-wrapper {
         height: 100%;
