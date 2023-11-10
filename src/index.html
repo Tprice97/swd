@@ -467,4 +467,48 @@ eleventyNavigation:
   </div>
 </section>
 
+<script>
+  const navBar = document.getElementById("cs-navigation");
+  const heroSection = document.getElementById("hero-1349");
+
+  let lastScrollTop = 0;
+
+  // Function to determine whether the element is in the viewport
+  function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+      rect.top <=
+        (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.bottom >= 0
+    );
+  }
+
+  // Function to handle the visibility of the navigation bar
+  function handleNavBarVisibility() {
+    const currentScroll =
+      window.pageYOffset || document.documentElement.scrollTop;
+
+    // Apply the effect when the hero section is not in the viewport
+    if (!isInViewport(heroSection)) {
+      navBar.classList.add("highlight");
+      navBar.classList.remove("hidden");
+    } else {
+      navBar.classList.remove("highlight");
+
+      if (currentScroll > lastScrollTop) {
+        // Optionally, hide the nav bar when scrolling down
+        navBar.classList.add("hidden");
+      } else {
+        // Show the nav bar when scrolling up
+        navBar.classList.remove("hidden");
+      }
+    }
+
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+  }
+
+  // Scroll event listener
+  window.addEventListener("scroll", handleNavBarVisibility, false);
+</script>
+
 {% include 'components/cta.html' %} {% endblock %}

@@ -650,6 +650,15 @@
       transform: translateX(-50%);
       transition: top 0.3s, border-radius 0.3s, width 0.3s, max-width 0.3s;
 
+      &.hidden {
+        top: -100%;
+        transition: top 2s;
+      }
+
+      &.highlight {
+        background: var(--primary);
+      }
+
       .cs-container {
         width: 100%;
         max-width: calc(1440 / 16 * 1rem);
