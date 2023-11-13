@@ -93,46 +93,23 @@
       z-index: -1;
 
       &:before {
-        /* gradient overlay */
+        /* Overlay */
         content: "";
         width: 100%;
         height: 100%;
-        background: #000;
-        opacity: 0.4;
+        background: rgba(
+          0,
+          31,
+          63,
+          0.75
+        ); /* Adjust the 0.7 value for desired opacity */
         position: absolute;
         display: block;
         top: 0;
         left: 0;
         z-index: 1;
-      }
-
-      &:after {
-        /* gradient overlay */
-        content: "";
-        width: 100%;
-        height: 40%;
-        background: -webkit-gradient(
-          linear,
-          left top,
-          left bottom,
-          from(rgba(0, 0, 0, 1)),
-          to(rgba(0, 0, 0, 0))
-        );
-        background: -o-linear-gradient(
-          top,
-          rgba(0, 0, 0, 1) 0%,
-          rgba(0, 0, 0, 0) 100%
-        );
-        background: linear-gradient(
-          to bottom,
-          rgba(0, 0, 0, 1) 0%,
-          rgba(0, 0, 0, 0) 100%
-        );
-        position: absolute;
-        display: block;
-        top: 0;
-        left: 0;
-        z-index: 2;
+        /* prevents the cursor from interacting with it */
+        pointer-events: none;
       }
 
       img {
@@ -150,30 +127,30 @@
 
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
-  #banner-1400 {
-    .cs-background {
-      &:before {
-        width: 50%;
-        height: 100%;
-        background: -webkit-gradient(
-          linear,
-          left top,
-          right top,
-          from(rgba(0, 0, 0, 1)),
-          to(rgba(0, 0, 0, 0))
-        );
-        background: -o-linear-gradient(
-          left,
-          rgba(0, 0, 0, 1) 0%,
-          rgba(0, 0, 0, 0) 100%
-        );
-        background: linear-gradient(
-          to right,
-          rgba(0, 0, 0, 1) 0%,
-          rgba(0, 0, 0, 0) 100%
-        );
-        opacity: 1;
-      }
-    }
-  }
+  // #banner-1400 {
+  //   .cs-background {
+  //     &:before {
+  //       width: 50%;
+  //       height: 100%;
+  //       background: -webkit-gradient(
+  //         linear,
+  //         left top,
+  //         right top,
+  //         from(rgba(0, 0, 0, 1)),
+  //         to(rgba(0, 0, 0, 0))
+  //       );
+  //       background: -o-linear-gradient(
+  //         left,
+  //         rgba(0, 0, 0, 1) 0%,
+  //         rgba(0, 0, 0, 0) 100%
+  //       );
+  //       background: linear-gradient(
+  //         to right,
+  //         rgba(0, 0, 0, 1) 0%,
+  //         rgba(0, 0, 0, 0) 100%
+  //       );
+  //       opacity: 1;
+  //     }
+  //   }
+  // }
 }
