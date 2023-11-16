@@ -157,9 +157,8 @@
         About Page - About us | Painters and Co.
         -->
     <title>
-      {% if page.url == '/'%} {{ title }} | {{ client.name }} | {{
-      client.address.city }}, {{ client.address.state }} {% else %} {{ title }}
-      | {{ client.name }} {% endif %}
+      {% if page.url == '/'%} {{ title }} {% else %} {{ title }} | {{
+      client.name }} {% endif %}
     </title>
   </head>
   <body>
