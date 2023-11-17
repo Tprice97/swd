@@ -28,6 +28,10 @@
       gap: clamp(0.5rem, 1vw, 0.75rem);
     }
 
+    .cs-title {
+      color: #000;
+    }
+
     .cs-int-title {
       /* 39px - 61px */
       font-size: clamp(2.4375rem, 6.4vw, 3.8125rem);
