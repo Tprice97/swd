@@ -21,9 +21,11 @@
       gap: clamp(3rem, 6vw, 4rem);
     }
 
-    h2 {
+    .cs-title {
+      max-width: 23ch;
       color: #000;
     }
+
     .cs-content {
       /* set text align to left if content needs to be left aligned */
       text-align: center;
@@ -32,6 +34,12 @@
       flex-direction: column;
       /* centers content horizontally, set to flex-start to left align */
       align-items: center;
+
+      max-width: calc(840 / 16 * 1rem);
+      margin-bottom: calc(16 / 16 * 1rem);
+      &:last-of-type {
+        margin-bottom: 0;
+      }
     }
 
     .cs-topper {
@@ -40,6 +48,10 @@
 
     .cs-content {
       margin-bottom: clamp(2.5rem, 5vw, 4rem);
+    }
+
+    p {
+      margin-bottom: 1rem;
     }
 
     .cs-card-group {
@@ -123,40 +135,40 @@
       transition: 0.3s color;
     }
 
-    .cs-link {
-      text-decoration: none;
-      width: calc(64 / 16 * 1rem);
-      height: calc(64 / 16 * 1rem);
-      background-color: var(--secondary);
-      // border: 1px solid #888888;
-      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      /* prevents the parent flexbox from shrinking the arrow */
-      flex-shrink: 0;
-      gap: calc(10 / 16 * 1rem);
-      transition: background-color 0.3s;
+    //  .cs-link {
+    //    text-decoration: none;
+    //   width: calc(64 / 16 * 1rem);
+    //   height: calc(64 / 16 * 1rem);
+    //    background-color: var(--secondary);
+    //    // border: 1px solid #888888;
+    //    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    //    border-radius: 50%;
+    //    display: flex;
+    //    justify-content: center;
+    //    align-items: center;
+    //    /* prevents the parent flexbox from shrinking the arrow */
+    //    flex-shrink: 0;
+    //    gap: calc(10 / 16 * 1rem);
+    //    transition: background-color 0.3s;
 
-      &:hover {
-        background-color: var(--primary);
+    //    &:hover {
+    //      background-color: var(--primary);
 
-        // .cs-arrow {
-        //   /* Filter to --secondary */
-        //   filter: brightness(0%) saturate(100%) invert(56%) sepia(44%)
-        //     saturate(2773%) hue-rotate(349deg) brightness(101%) contrast(80%);
-        // }
-      }
-    }
+    //      .cs-arrow {
+    //        /* Filter to --secondary */
+    //        filter: brightness(0%) saturate(100%) invert(56%) sepia(44%)
+    //          saturate(2773%) hue-rotate(349deg) brightness(101%) contrast(80%);
+    //      }
+    //   }
+    // }
 
-    .cs-arrow {
-      filter: brightness(0) saturate(100%) invert(99%) sepia(85%) saturate(161%)
-        hue-rotate(169deg) brightness(113%) contrast(100%);
-      width: auto;
-      height: calc(12 / 16 * 1rem);
-      transition: filter 0.3s;
-    }
+    //  .cs-arrow {
+    //    filter: brightness(0) saturate(100%) invert(99%) sepia(85%) saturate(161%)
+    //      hue-rotate(169deg) brightness(113%) contrast(100%);
+    //    width: auto;
+    //    height: calc(12 / 16 * 1rem);
+    //    transition: filter 0.3s;
+    //  }
   }
 }
 
@@ -184,30 +196,6 @@
 
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-  @keyframes floatAnimation {
-    0% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-2rem);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes floatAnimation2 {
-    0% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-3rem);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
-
   #why-choose-1371 {
     padding: var(--sectionPadding);
     background-color: var(--background);
@@ -312,6 +300,7 @@
       line-height: 1.2em;
       font-weight: 700;
       margin: 0;
+      margin-bottom: 1rem;
       color: #000;
       display: flex;
       justify-content: flex-start;
@@ -464,15 +453,20 @@
       /* set text align to left if content needs to be left aligned */
       text-align: center;
       width: 100%;
-      max-width: calc(542 / 16 * 1rem);
       display: flex;
       flex-direction: column;
       /* centers content horizontally, set to flex-start to left align */
       align-items: center;
+
+      max-width: calc(840 / 16 * 1rem);
+      margin-bottom: calc(16 / 16 * 1rem);
+      &:last-of-type {
+        margin-bottom: 0;
+      }
     }
 
     .cs-title {
-      max-width: 20ch;
+      max-width: 23ch;
       color: #000;
     }
 
