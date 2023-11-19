@@ -232,7 +232,7 @@
 
   #content-page-1401 {
     padding: var(--sectionPadding);
-    background-color: #fff;
+    background-color: var(--background);
     /* clips the wave background from causing overflow issues when it goes off screen */
     overflow: hidden;
     position: relative;
