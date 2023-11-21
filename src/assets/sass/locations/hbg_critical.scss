@@ -1,0 +1,360 @@
+/* STYLES FOR ABOVE THE FOLD */
+
+/*-- -------------------------- -->
+<---           Hero             -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  // @keyframes floatAnimation {
+  //   0% {
+  //     transform: translateY(0);
+  //   }
+  //   50% {
+  //     transform: translateY(-2rem);
+  //   }
+  //   100% {
+  //     transform: translateY(0);
+  //   }
+  // }
+
+  // @keyframes floatAnimation2 {
+  //   0% {
+  //     transform: translateY(0);
+  //   }
+  //   50% {
+  //     transform: translateY(-3rem);
+  //   }
+  //   100% {
+  //     transform: translateY(0);
+  //   }
+  // }
+
+  #hero-1349 {
+    /* added */
+    max-height: 110vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* 250px - 500px - leaving extra space for the navigation */
+    padding: clamp(15.625rem, 35.95vw, 25rem) calc(16 / 16 * 1rem) 0;
+    /* 200px - 250px */
+    padding-bottom: clamp(12.5rem, 16.5vw, 15.625rem);
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+
+    // &:before {
+    //   /* Overlay */
+    //   content: "";
+    //   width: 100%;
+    //   height: 30%;
+    //   background: -webkit-gradient(
+    //     linear,
+    //     left top,
+    //     left bottom,
+    //     from(rgba(0, 0, 0, 1)),
+    //     to(rgba(0, 0, 0, 0))
+    //   );
+    //   background: -o-linear-gradient(
+    //     top,
+    //     rgba(0, 0, 0, 1) 0%,
+    //     rgba(0, 0, 0, 0) 100%
+    //   );
+    //   background: linear-gradient(
+    //     to bottom,
+    //     rgba(0, 0, 0, 1) 0%,
+    //     rgba(0, 0, 0, 0) 100%
+    //   );
+    //   opacity: 1;
+    //   position: absolute;
+    //   display: block;
+    //   top: 0;
+    //   left: 0;
+    //   z-index: 2;
+    //   /* prevents the cursor from interacting with it */
+    //   pointer-events: none;
+    // }
+
+    .cs-container {
+      width: 100%;
+      max-width: calc(1280 / 16 * 1rem);
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: start;
+    }
+
+    .cs-content {
+      /* set text align to left if content needs to be left aligned */
+      text-align: center;
+      width: 100%;
+      max-width: calc(630 / 16 * 1rem);
+      display: flex;
+      flex-direction: column;
+      /* centers content horizontally, set to flex-start to left align */
+      align-items: center;
+    }
+
+    .cs-topper {
+      font-size: calc(20 / 16 * 1rem);
+      line-height: 1.2em;
+      text-transform: uppercase;
+      text-align: inherit;
+      letter-spacing: 0.1em;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: calc(8 / 16 * 1rem);
+      display: block;
+    }
+
+    .cs-title {
+      /* 39px - 61px */
+      // font-size: clamp(2.4375rem, 6.4vw, 3.8125rem);
+      // font-size: clamp(2.4375rem, 6.4vw, 4.5rem);
+      font-size: clamp(2.4375rem, 4.7vw, 4.5rem);
+      font-weight: 800;
+      line-height: 1.2em;
+      text-align: inherit;
+      max-width: 20ch;
+      margin: 0 0 calc(16 / 16 * 1rem) 0;
+      color: #fff;
+      position: relative;
+    }
+
+    .cs-text {
+      font-size: calc(20 / 16 * 1rem);
+      font-weight: 500;
+      line-height: 1.5em;
+      text-align: inherit;
+      width: 100%;
+      /* 464px - 622px */
+      max-width: clamp(29rem, 60vw, 38.785rem);
+      margin: 0 0 calc(40 / 16 * 1rem) 0;
+      color: #fff;
+    }
+
+    .cs-button-solid {
+      font-size: calc(16 / 16 * 1rem);
+      line-height: calc(56 / 16 * 1rem);
+      text-decoration: none;
+      font-weight: 700;
+      overflow: hidden;
+      margin: 0;
+      color: #fff;
+      padding: 0 calc(48 / 16 * 1rem);
+      border-radius: calc(30 / 16 * 1rem);
+      box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.1);
+      // background-color: var(--ctaButton);
+      background-color: var(--accentLight);
+      display: inline-block;
+      position: relative;
+      z-index: 1;
+      transition: color 0.3s;
+
+      &:before {
+        content: "";
+        position: absolute;
+        display: block;
+        height: 100%;
+        width: 0%;
+        // background: var(--primaryLight);
+        background: #e55a5a;
+        opacity: 1;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: width 0.3s;
+      }
+
+      &:hover,
+      &:focus {
+        color: #f4f4f4;
+        box-shadow: 0px 6px 12px rgba(255, 255, 255, 0.15);
+      }
+
+      &:hover:before,
+      &:focus:before {
+        width: 100%;
+      }
+    }
+
+    // .cs-bubbles {
+    //   /* this scales the children inside of it down. They're all in ems so they pull from the parent font size for their value of em, in this case, the value of em is tied to the viewwidth size and stops growing when the font size is equal to 1em, which it pulls from the nearst parent with a declred font size (which is the html tag, and that tag is 16px by default) */
+    //   font-size: min(2vw, 0.5em);
+    //   position: absolute;
+    //   z-index: -1;
+    // }
+
+    // .cs-bubbles1 {
+    //   width: calc(680 / 16 * 1em);
+    //   height: calc(724 / 16 * 1em);
+    //   right: calc(-190 / 16 * 1rem);
+    //   /* changes to 172 at large desktop */
+    //   top: 0;
+
+    //   &:after {
+    //     /* orange bubble */
+    //     content: "";
+    //     width: calc(546 / 16 * 1em);
+    //     height: calc(546 / 16 * 1em);
+    //     background: var(--secondary);
+    //     opacity: 0.8;
+    //     border-radius: 50%;
+    //     display: block;
+    //     position: absolute;
+    //     bottom: 0;
+    //     right: 0;
+    //     z-index: -1;
+    //     animation-name: floatAnimation2;
+    //     animation-duration: 10s;
+    //     animation-timing-function: ease-in-out;
+    //     animation-fill-mode: forwards;
+    //     animation-iteration-count: infinite;
+    //   }
+    // }
+
+    // .cs-bubbles2 {
+    //   width: calc(330 / 16 * 1rem);
+    //   height: calc(476 / 16 * 1rem);
+    //   /* changes to 160px at larger desktop */
+    //   left: calc(-220 / 16 * 1rem);
+    //   /* removed at larger desktop */
+    //   bottom: calc(-260 / 16 * 1rem);
+
+    //   &:before {
+    //     /* white border bubble */
+    //     content: "";
+    //     width: calc(330 / 16 * 1rem);
+    //     height: calc(330 / 16 * 1rem);
+    //     background: transparent;
+    //     border: 1px solid #fff;
+    //     border-radius: 50%;
+    //     opacity: 1;
+    //     position: absolute;
+    //     display: block;
+    //     bottom: 0;
+    //     right: 0;
+    //     animation-name: floatAnimation;
+    //     animation-duration: 5s;
+    //     animation-timing-function: ease-in-out;
+    //     animation-fill-mode: forwards;
+    //     animation-iteration-count: infinite;
+    //   }
+
+    //   &:after {
+    //     /* orange bubble */
+    //     content: "";
+    //     width: calc(300 / 16 * 1rem);
+    //     height: calc(300 / 16 * 1rem);
+    //     background: var(--secondary);
+    //     opacity: 0.8;
+    //     border-radius: 50%;
+    //     display: block;
+    //     position: absolute;
+    //     top: 0;
+    //     right: calc(40 / 16 * 1rem);
+    //     z-index: -1;
+    //     animation-name: floatAnimation2;
+    //     animation-duration: 14s;
+    //     animation-timing-function: ease-in-out;
+    //     animation-fill-mode: forwards;
+    //     animation-iteration-count: infinite;
+    //   }
+    // }
+
+    .cs-background {
+      width: 100%;
+      height: 100%;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -2;
+
+      // &:before {
+      //   /* Overlay */
+      //   content: "";
+      //   width: 100%;
+      //   height: 100%;
+      //   /* Gradient with color stops */
+      //   background: linear-gradient(
+      //     to top,
+      //     rgba(0, 31, 63, 0) 0%,
+      //     /* transparent at the bottom */ rgba(0, 31, 63, 0.8) 50%,
+      //     /* starting to get color halfway */ rgba(0, 31, 63, 0.7) 100%
+      //   ); /* fully opaque color at the top */
+      //   position: absolute;
+      //   display: block;
+      //   bottom: 0;
+      //   left: 0;
+      //   z-index: 1;
+      //   /* prevents the cursor from interacting with it */
+      //   pointer-events: none;
+      // }
+
+      &:before {
+        /* Overlay */
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: rgba(
+          0,
+          31,
+          63,
+          0.8
+        ); /* Adjust the 0.7 value for desired opacity */
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        /* prevents the cursor from interacting with it */
+        pointer-events: none;
+      }
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        /* makes the top of the image start at the top of the parent */
+        object-position: top;
+      }
+    }
+  }
+
+  /* Tablet - 768px */
+  @media only screen and (min-width: 48rem) {
+    #hero-1349 {
+      .cs-container {
+        align-items: flex-start;
+      }
+
+      .cs-content {
+        text-align: left;
+        align-items: flex-start;
+      }
+    }
+  }
+
+  /* Large Desktop Parallax Effect - 1600px */
+  @media only screen and (min-width: 81.25rem) {
+    #hero-1349 {
+      .cs-background {
+        background: url("/assets/images/locations/harrisburg/harrisburg-pa-bridge-pennsylvania-capitol.webp");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        img {
+          display: none;
+        }
+      }
+    }
+  }
+}

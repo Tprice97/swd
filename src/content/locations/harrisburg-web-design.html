@@ -10,7 +10,7 @@ eleventyNavigation:
 
 {% extends "layouts/base.html" %} {% block head %}
 <link rel="stylesheet" href="/assets/css/local.css" />
-<link rel="stylesheet" href="/assets/css/critical.css" />
+<link rel="stylesheet" href="/assets/css/locations/hbg_critical.css" />
 
 <!-- Script for Netlify Identity -->
 <script
@@ -55,12 +55,19 @@ eleventyNavigation:
   <picture class="cs-background">
     <source
       media="(max-width: 600px)"
-      srcset="/assets/images/bridge_small.jpg"
+      srcset="
+        /assets/images/locations/harrisburg/harrisburg-pa-bridge-pennsylvania-capitol-mobile.webp
+      "
     />
-    <source media="(min-width: 601px)" srcset="/assets/images/bridge.jpg" />
+    <source
+      media="(min-width: 601px)"
+      srcset="
+        /assets/images/locations/harrisburg/harrisburg-pa-bridge-pennsylvania-capitol.webp
+      "
+    />
     <img
       decoding="async"
-      src="/assets/images/bridge.jpg"
+      src="/assets/images/locations/harrisburg/harrisburg-pa-bridge-pennsylvania-capitol.webp"
       alt="Bridge crossing Susquehanna River in Harrisburg, PA"
       width="2121"
       height="1414"
