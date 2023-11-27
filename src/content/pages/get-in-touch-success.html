@@ -1,0 +1,90 @@
+---
+title: "Thank You for Reaching Out"
+description: "Thank you for reaching out! Your message has been successfully sent."
+preloadImg: "/assets/images/banner.webp"
+permalink: "get-in-touch-success/"
+eleventyNavigation:
+  key: Thank You
+  order: 800
+---
+
+{% extends "layouts/base.html" %} {% block head %}
+<link rel="stylesheet" href="/assets/css/about.css" />
+{% endblock %} {% block body %}
+<!-- ============================================ -->
+<!--                 Content Page                 -->
+<!-- ============================================ -->
+
+<!-- ============================================ -->
+<!--                   Banner                     -->
+<!-- ============================================ -->
+
+<div id="banner-1401">
+  <div class="cs-container">
+    <span class="cs-int-title">About Us</span>
+    <div class="cs-breadcrumbs">
+      <a href="" class="cs-link">Home</a>
+      <a href="" class="cs-link cs-active">Thanks</a>
+    </div>
+  </div>
+  <!--Background Image-->
+  <picture class="cs-background">
+    <!--Mobile Image-->
+    <source
+      media="(max-width: 600px)"
+      srcset="/assets/images/banner_mobile.webp"
+    />
+    <!--Tablet and above Image-->
+    <source media="(min-width: 601px)" srcset="/assets/images/banner.webp" />
+    <img
+      decoding="async"
+      src="/assets/images/banner.webp"
+      alt="Autumn foliage in Harrisburg, PA along the Susquehanna River, showcasing vibrant red, orange, and yellow leaves reflecting on the water"
+      width="1920"
+      height="500"
+      aria-hidden="true"
+    />
+  </picture>
+</div>
+
+<section id="content-page-1401">
+  <div class="cs-container">
+    <div class="cs-image-group">
+      <div class="cs-flex">
+        <picture class="cs-background">
+          <source
+            media="(max-width: 600px)"
+            srcset="
+              /assets/images/harrisburg-web-design-small-business-reflection-mobile.webp
+            "
+          />
+
+          <source
+            media="(min-width: 601px)"
+            srcset="
+              /assets/images/harrisburg-web-design-small-business-reflection.webp
+            "
+          />
+          <img
+            loading="lazy"
+            decoding="async"
+            src="/assets/images/harrisburg-web-design-small-business-reflection.webp"
+            alt="Harrisburg skyline reflecting on the river at sunset, showcasing Harrisburg web design and small business web design aesthetics."
+            width="542"
+            height="728"
+          />
+        </picture>
+      </div>
+    </div>
+    <div class="cs-content">
+      <h1 class="cs-title">Thanks For Contacting Us!</h1>
+      <p>
+        Thanks for reaching out! A member of our team will be in touch with you
+        soon to schedule your free consultation.
+      </p>
+    </div>
+  </div>
+  <!-- <div class="cs-bubbles" aria-hidden="true"></div> -->
+</section>
+
+{% endblock %}
